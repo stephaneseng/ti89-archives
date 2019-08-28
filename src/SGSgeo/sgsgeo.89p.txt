@@ -1,0 +1,880 @@
+()
+Prgm
+
+©PREPARATION
+setMode("Graph","FUNCTION"):FnOff:ClrGraph:ClrDraw:0xmin:15.8xmax:1xscl:0ymin:7.6ymax:1yscl:10xres:DispG:0ss
+
+©CUSTOM
+Custom
+Title "  Outils  "
+Item ""
+Title "  Placer  "
+Item ""
+Title " Supprimer "
+Item ""
+Title " Definir "
+Item ""
+Title " Etude "
+Item ""
+EndCustm
+CustmOn
+
+Lbl dbt
+©CREATION VARIABLES
+newList(0)ptsa
+newList(0)ptso
+newList(0)ptn
+newList(0)lgn
+newList(0)cer
+newList(0)dte
+newList(0)txt
+newList(0)def
+newList(0)an1:newList(0)an2:newList(0)an3:newList(0)an4:newList(0)an5:newList(0)an6:newList(0)an7:newList(0)ann1:newList(0)ann2:newList(0)ann3:newList(0)ann4:newList(0)ann5:newList(0)ann6:newList(0)ann7
+
+©MENU PRINCIPAL
+Lbl menup
+StoPic temp
+main\flib("font:0")
+
+©ANNULER
+If ss=1 Then 
+ptsaann1:ptsoann2:lgnann3:dteann4:cerann5:ptnann6:txtann7:0ss
+Else
+ptsaan1:ptsoan2:lgnan3:dtean4:ceran5:ptnan6:txtan7:1ss
+EndIf
+
+Toolbar
+Title "  Outils  "
+Item "Annuler",ann
+Item "Retracer",ret
+Item "Zoom",zoo
+Item "Sauver",sav
+Item "Effacer tout",efft
+Item "Propriétés",prop
+Item "Parametres",param
+Item "A propos de",appd
+Item "Quitter",quitt
+Title "  Placer  "
+Item "Point",ppt
+Item "Segment",psg
+Item "Droite",pdt
+Item "Cercle",pcl
+Item "Deplacer",pde
+Item "Commentaire",pco
+Title " Supprimer "
+Item "Point",spt
+Item "Segment",ssg
+Item "Droite",sdt
+Item "Cercle",scl
+Item "Commentaire",sco
+Title " Definir "
+Item "©Longueur",dlon
+Item "©Angle",dang
+Item "Milieu",cmi
+Item "©Intersection",din
+Item "Perpendiculaire",dpe
+Item "Parallele",dpa
+Item "Nommer",dno
+Item "Symétrie axiale",dsya
+Item "©Symétrie centrale",dsyc
+Item "©Rotation",drot
+Title " Etude "
+Item "Longueur ?",elo
+Item "Perp. ?",epe
+Item "Parallele ?",epa
+Item "Coordonnees ?",eco
+Item "Eqn droite ?",ed
+Item "Eqn cercle ?",ec
+EndTBar
+
+©QUITTER
+Lbl quitt
+Dialog
+Title "Quitter SGSgeo"
+Text ""
+Text "Voulez-vous quitter l'application ?"
+Text "[ENTER]  Oui"
+Text "[ESC]  Non"
+Text ""
+EndDlog
+If ok=0:Goto menup
+Goto exite
+
+©A PROPOS DE
+Lbl appd
+Dialog
+Title "A propos de SGSgeo"
+Text ""
+Text "v1.0"
+Text "SGSgeo de SENG Stephane"
+Text "© 2006 The SGS Corporation"
+Text ""
+EndDlog
+Goto menup
+
+©ANNULER
+Lbl ann
+sgsgeoan(6,0)
+Goto ret
+
+©PROPRIETES
+Lbl prop
+sgsgeoan(7,0)
+Goto menup
+
+©SAUVER
+Lbl sav
+Dialog
+Title "Sauver l'image"
+Text ""
+Request "Nom....",nom
+Text ""
+EndDlog
+If ok=0 or nom="":Goto menup
+StoPic #("main\"&nom)
+Goto menup
+
+©PARAMETRES
+Lbl param
+Dialog
+Title "Parametres"
+Text ""
+DropDown "Axes...........................",{"AFF","NAFF"},pax
+DropDown "Angle.........................",{"RADIANS","DEGRES"},pan
+DropDown "Grille........................",{"NAFF","AFF"},pgr
+Text ""
+EndDlog
+If ok=0:Goto menup
+If pax=1:setGraph("Axes","On")
+If pax=2:setGraph("Axes","Off")
+If pan=1:setMode("Angle","RADIAN")
+If pan=2:setMode("Angle","DEGRE")
+If pgr=1:setGraph("Quad","Off")
+If pgr=2:setGraph("Quad","On")
+DispG
+Goto ret
+
+©RETRACER
+Lbl ret
+sgsgeoan(2,0)
+Goto menup
+
+©EFFACER TOUT
+Lbl efft
+Dialog
+Title "Effacer tout"
+Text ""
+Text "Etes-vous sur ?"
+Text ""
+EndDlog
+If ok=0:Goto menup
+ClrDraw
+ClrGraph
+DelVar cer,ptsa,ptso,lgn,ptn,txt,dte
+Goto dbt
+
+©ZOOM
+Lbl zoo
+Try
+listmat(a1)
+Else
+{0,0}a1:{15.8,0}a2:{15.8,7.6}a3:{0,7.6}a4
+EndTry
+­30xmin:30xmax:10xscl
+­20ymin:20ymax:10yscl
+DispG
+sgsgeoan(2,0)
+sgsgeoan(4,0)
+Goto ret
+
+©PLACER
+©point
+Lbl ppt
+Input:augment(ptsa,{xc})ptsa:augment(ptso,{yc})ptso:Line xc-.1,yc,xc+.1,yc:Line xc,yc-.1,xc,yc+.1
+Goto menup
+
+©segment
+Lbl psg
+main\flib("busy:3","slmsg:Extremites du segment ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+RplcPic temp
+Line ptsa[ptsel[1]],ptso[ptsel[1]],ptsa[ptsel[2]],ptso[ptsel[2]]
+augment(lgn,{ptsel[1],ptsel[2]})lgn
+DelVar ptsel
+Goto menup
+
+©droite
+Lbl pdt
+main\flib("busy:3","slmsg:Points de la droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+augment(dte,{ptsel[1],ptsel[2]})dte
+RplcPic temp
+coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[2]]-ptso[ptsel[1]])/(ptsa[ptsel[2]]-ptsa[ptsel[1]])eqn
+If eqn=undef Then 
+RplcPic temp
+Line ptsa[ptsel[1]],­30,ptsa[ptsel[1]],30
+Goto menup
+EndIf
+eqn|x=­40yd
+eqn|x=40yf
+RplcPic temp
+Line ­40,yd,40,yf
+DelVar ptsel
+Goto menup
+
+©cercle
+Lbl pcl
+main\flib("busy:3","slmsg:Centre du cercle ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Point du cercle ?")
+sgsgeoan(1,2)
+If err=1:Goto menup
+RplcPic temp
+Circle ptsa[ptsel[1]],ptso[ptsel[1]],¨((ptsa[ptsel[1]]-ptsa[ptsel[2]])^2+(ptso[ptsel[1]]-ptso[ptsel[2]])^2)
+augment(cer,{ptsel[1],ptsel[2]})cer
+DelVar ptsel
+Goto menup
+
+©deplacer
+Lbl pde
+main\flib("busy:3","slmsg:Point a deplacer ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+Input
+xcptsa[ptsel[1]]
+ycptso[ptsel[1]]
+DelVar ptsel
+Goto ret
+
+©commentaire
+Lbl pco
+Input
+Dialog
+Title "SGSgeo - Commentaire"
+Text ""
+Request "Phrase",tx
+Text ""
+EndDlog
+If ok=0:Goto menup
+PtText tx,xc,yc
+augment(txt,{tx,xc,yc})txt
+Goto menup
+
+©SUPPRIMER
+©point
+Lbl spt
+main\flib("busy:3","slmsg:Point a supprimer ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+If ptsel[1]=1 Then :right(ptsa,dim(ptsa)-1)ptsa:right(ptso,dim(ptso)-1)ptso:Goto ver:EndIf
+If ptsel[1]=dim(ptsa) Then :left(ptsa,dim(ptsa)-1)ptsa:left(ptso,dim(ptso)-1)ptso:Goto ver:EndIf
+left(ptsa,ptsel[1]-1)gptsa:right(ptsa,dim(ptsa)-ptsel[1])dptsa
+left(ptso,ptsel[1]-1)gptso:right(ptso,dim(ptso)-ptsel[1])dptso
+DelVar ptsa,ptso
+newList(0)ptsa
+newList(0)ptso
+augment(ptsa,gptsa)ptsa:augment(ptsa,dptsa)ptsa:augment(ptso,gptso)ptso:augment(ptso,dptso)ptso
+Lbl ver
+sgsgeoan(3,1)
+sgsgeoan(3,2)
+sgsgeoan(3,3)
+sgsgeoan(3,4)
+DelVar ptsel
+Goto ret
+
+©segment
+Lbl ssg
+main\flib("busy:3","slmsg:Extremites du segement ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+For tt,1,dim(lgn),2
+Try
+If ptsel[1]=lgn[tt] and ptsel[2]=lgn[tt+1] Then 
+If tt=1 Then :right(lgn,dim(lgn)-2)lgn:Goto veri:EndIf
+If tt=dim(lgn)-1 Then :left(lgn,dim(lgn)-2)lgn:Goto veri:EndIf
+left(lgn,tt-1)glgn:right(lgn,dim(lgn)-tt)dlgn
+DelVar lgn
+newList(0)lgn
+augment(lgn,glgn)lgn:augment(lgn,dlgn)lgn
+EndIf
+Else
+EndTry
+EndFor
+For tt,2,dim(lgn),2
+If ptsel[1]=lgn[tt] and ptsel[2]=lgn[tt-1] Then 
+If tt=2 Then :right(lgn,dim(lgn)-2)lgn:Goto veri:EndIf
+If tt=dim(lgn) Then :left(lgn,dim(lgn)-2)lgn:Goto veri:EndIf
+left(lgn,tt-1)glgn:right(lgn,dim(lgn)-tt-1)dlgn
+DelVar lgn
+newList(0)lgn
+augment(lgn,glgn)lgn:augment(lgn,dlgn)lgn
+EndIf
+EndFor
+Lbl veri
+DelVar ptsel
+Goto ret
+
+©droite
+Lbl sdt
+main\flib("busy:3","slmsg:Points de la droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=2:Goto menup
+For tt,1,dim(dte),2
+If dte[tt]=ptsel[1] Then 
+If tt=1 Then 
+right(dte,dim(dte)-2)ddte
+newList(0)dte
+augment(dte,ddte)dte
+Goto contdt
+EndIf
+If tt=dim(dte)-1 Then 
+left(dte,dim(dte)-2)gdte
+newList(0)dte
+augment(dte,gdte)dte
+Goto contdt
+EndIf
+left(dte,tt-1)gdte
+right(dte,tt-1)ddte
+newList(0)dte
+augment(dte,gdte)dte
+augment(dte,ddte)dte
+Lbl contdt
+tt-2tt
+EndIf
+EndFor
+For tt,2,dim(dte),2
+If dte[tt]=ptsel[1] Then 
+If tt=2 Then 
+right(dte,dim(dte)-2)ddte
+newList(0)dte
+augment(dte,ddte)dte
+Goto findt
+EndIf
+If tt=dim(dte) Then 
+left(dte,dim(dte)-2)gdte
+newList(0)dte
+augment(dte,gdte)dte
+Goto findt
+EndIf
+left(dte,tt-2)gdte
+right(dte,tt-2)ddte
+newList(0)dte
+augment(dte,gdte)dte
+augment(dte,ddte)dte
+Lbl findt
+tt-2tt
+EndIf
+EndFor
+For tt,1,dim(dte)
+If dte[tt]>ptsel[1] Then 
+dte[tt]-1dte[tt]
+EndIf
+EndFor
+DelVar ptsel
+Goto ret
+
+©cercle
+Lbl scl
+main\flib("busy:3","slmsg:Centre du cercle ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Point du cercle ?")
+sgsgeoan(1,2)
+If err=1:Goto menup
+For tt,1,dim(cer),2
+If ptsel[1]=cer[tt] and ptsel[2]=cer[tt+1] Then 
+If tt=1 Then :right(cer,dim(cer)-2)cer:Goto verii:EndIf
+If tt=dim(cer)-1 Then :left(cer,dim(cer)-2)cer:Goto verii:EndIf
+left(cer,tt-1)gcer:right(cer,dim(cer)-tt)dcer
+DelVar cer
+newList(0)cer
+augment(cer,gcer)cer:augment(cer,dcer)cer
+EndIf
+EndFor
+For tt,2,dim(cer),2
+If ptsel[1]=cer[tt] and ptsel[2]=cer[tt-1] Then 
+If tt=2 Then :right(cer,dim(cer)-2)cer:Goto verii:EndIf
+If tt=dim(cer) Then :left(cer,dim(cer)-2)cer:Goto verii:EndIf
+left(cer,tt-1)gcer:right(cer,dim(cer)-tt-1)dcer
+DelVar cer
+newList(0)cer
+augment(cer,gcer)cer:augment(cer,dcer)cer
+EndIf
+EndFor
+Lbl verii
+DelVar ptsel
+Goto ret
+
+©commentaire
+Lbl sco
+sgsgeoan(5,1)
+If err=1:Goto menup
+If txtsel[1]*3=3 Then :right(txt,dim(txt)-3)txt:Goto verrr:EndIf
+If txtsel[1]*3=dim(txt) Then :left(txt,dim(txt)-3)txt:Goto verrr:EndIf
+left(txt,txtsel[1]*3-3)gtxt:right(txt,dim(txt)-txtsel[1]*3)dtxt
+DelVar txt
+newList(0)txt
+augment(txt,gtxt)txt:augment(txt,dtxt)txt
+Lbl verrr
+Goto ret
+
+©CALCUL
+©milieu
+Lbl cmi
+main\flib("busy:3","slmsg:Extremites du segment ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+(ptsa[ptsel[1]]+ptsa[ptsel[2]])/2varu
+(ptso[ptsel[1]]+ptso[ptsel[2]])/2vard
+RplcPic temp
+Line varu-.1,vard,varu+.1,vard:Line varu,vard-.1,varu,vard+.1
+augment(ptsa,{varu})ptsa:augment(ptso,{vard})ptso
+DelVar ptsel
+Goto menup
+
+©perpendiculaire
+Lbl dpe
+DelVar veca,veco,vecai,vecoi,xv,yv,xxx,yyy,coef,eqn,eqnd
+0specc
+main\flib("busy:3","slmsg:Points de la droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Perpendiculaire passe par ?")
+sgsgeoan(1,3)
+If err=1:Goto menup
+©coordonnees
+0xv:DelVar yv
+ptsa[ptsel[2]]-ptsa[ptsel[1]]veca
+ptso[ptsel[2]]-ptso[ptsel[1]]veco
+ptsa[ptsel[3]]-xvvecai
+ptso[ptsel[3]]-yvvecoi
+©recherche de yv
+0specc
+Try
+right(solve(veca*vecai+veco*vecoi=0,yv))yv
+Else
+ptsa[ptsel[3]]xxx
+ptso[ptsel[1]]yyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+1specc
+EndTry
+If specc=1:Goto menup
+©equation droites
+coef*x-coef*ptsa[ptsel[3]]+ptso[ptsel[3]]|coef=(ptso[ptsel[3]]-yv)/(ptsa[ptsel[3]]-xv)eqn
+coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[1]]-ptso[ptsel[2]])/(ptsa[ptsel[1]]-ptsa[ptsel[2]])eqnd
+©ajout point
+right(solve(eqn=eqnd,x))xxx
+If xxx=ptsa[ptsel[3]]:xxx+.2xxx
+eqn|x=xxxyyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+DelVar ptsel
+Goto menup
+
+©parallele
+Lbl dpa
+DelVar veca,veco,vecai,vecoi,xv,yv,xxx,yyy,coef,eqn,eqnd
+0specc
+main\flib("busy:3","slmsg:Points de la droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Parallele passant par ?")
+sgsgeoan(1,3)
+©coordonnees
+ptsa[ptsel[2]]-ptsa[ptsel[1]]veca
+ptso[ptsel[2]]-ptso[ptsel[1]]veco
+0xv
+ptsa[ptsel[3]]-xvvecai
+ptso[ptsel[3]]-yvvecoi
+©recherche de yv
+Try
+right(solve(veca*(ptso[ptsel[3]]-yv)-veco*vecai=0,yv))yv
+Else
+ptsa[ptsel[3]]xxx
+ptso[ptsel[3]]-1yyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+1specc
+EndTry
+If specc=1:Goto menup
+©equation droites
+coef*x-coef*ptsa[ptsel[3]]+ptso[ptsel[3]]|coef=(yv-ptso[ptsel[3]])/(xv-ptsa[ptsel[3]])eqn
+©ajout point
+ptsa[ptsel[3]]+1xxx
+eqn|x=ptsa[ptsel[3]]+1yyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+DelVar ptsel
+Goto menup
+
+©DEFINIR
+©nommer
+Lbl dno
+main\flib("busy:3","slmsg:Nommer quel point ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+For tt,1,dim(ptn),2
+If ptsel[1]=ptn[tt] Then 
+ptn[tt+1]vaar
+Dialog
+Title "Nommer un point"
+Text ""
+Text "Inscrivez le nouveau nom"
+Text "ci-dessous ou appuyez sur [ESC]."
+Text ""
+Request "Nouveau nom",vaar
+Text ""
+EndDlog
+If ok=0:Goto menup
+RplcPic temp
+If dim(vaar)1 Then 
+Dialog
+Title "Erreur"
+Text ""
+Text "Le nom du point ne comporte"
+Text "qu'une seule lettre !"
+Text ""
+EndDlog
+Goto menup
+EndIf
+vaarptn[tt+1]
+PtText ptn[tt+1],ptsa[ptsel[1]]+.1,ptso[ptsel[1]]-.1
+Goto menup
+EndIf
+EndFor
+Dialog
+Title "Nommer un point"
+Text ""
+Request "Nom du point",varr
+Text ""
+EndDlog
+If ok=0:Goto menup
+RplcPic temp
+If dim(varr)1 Then 
+Dialog
+Title "Erreur"
+Text ""
+Text "Le nom du point ne comporte"
+Text "qu'une seule lettre !"
+Text ""
+EndDlog
+Goto menup
+EndIf
+RplcPic temp
+PtText varr,ptsa[ptsel[1]]+.1,ptso[ptsel[1]]-.1
+augment(ptn,{ptsel[1],varr})ptn
+Goto menup
+
+©symétrie axiale
+Lbl dsya
+main\flib("busy:3","slmsg:Axe de symetrie ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Quel point ?")
+sgsgeoan(1,3)
+If err=1:Goto menup
+©coordonnees
+0xv:DelVar yv
+ptsa[ptsel[2]]-ptsa[ptsel[1]]veca
+ptso[ptsel[2]]-ptso[ptsel[1]]veco
+ptsa[ptsel[3]]-xvvecai
+ptso[ptsel[3]]-yvvecoi
+©recherche de yv
+0specc
+Try
+right(solve(veca*vecai+veco*vecoi=0,yv))yv
+Else
+Pause "OH OH !"
+ptsa[ptsel[3]]xxx
+ptso[ptsel[1]]yyy
+yyy-ptso[ptsel[3]]dis
+yyy+disyyyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyyy})ptso
+RplcPic temp
+Line xxx-.1,yyyy,xxx+.1,yyyy:Line xxx,yyyy-.1,xxx,yyyy+.1
+1specc
+EndTry
+If specc=1:Goto menup
+©equation droites
+coef*x-coef*ptsa[ptsel[3]]+ptso[ptsel[3]]|coef=(ptso[ptsel[3]]-yv)/(ptsa[ptsel[3]]-xv)eqn
+coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[1]]-ptso[ptsel[2]])/(ptsa[ptsel[1]]-ptsa[ptsel[2]])eqnd
+©ajout point
+right(solve(eqn=eqnd,x))xxx
+©If xxx=ptsa[ptsel[3]]:xxx+.2xxx
+If xxx=ptsa[ptsel[3]]:Goto menup
+eqn|x=xxxyyy
+©augmente(ptsa,{xxx})ptsa:augmente(ptso,{yyy})ptso
+©RplcImg temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1:Pause:RplcPic temp
+©xinter-pt et fin
+If xxx>ptsa[ptsel[3]] Then 
+xxx-ptsa[ptsel[3]]dis
+xxx+disxxxx
+Else
+ptsa[ptsel[3]]-xxxdis
+xxx-disxxxx
+EndIf
+eqn|x=xxxxyyyy
+augment(ptsa,{xxxx})ptsa:augment(ptso,{yyyy})ptso
+RplcPic temp
+Line xxxx-.1,yyyy,xxxx+.1,yyyy:Line xxxx,yyyy-.1,xxxx,yyyy+.1
+DelVar ptsel
+Goto menup
+
+©rotation
+Lbl drot
+main\flib("busy:3","slmsg:Rotation de centre ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Quel point ?")
+sgsgeoan(1,2)
+If err=1:Goto menup
+Dialog
+Title "SGSGEO - ROTATION"
+Text ""
+Request "Angle",var
+Text ""
+EndDlog
+If ok=0 or var="":Goto menup
+expr(var)var
+RPr(ptsa[ptsel[1]],ptso[ptsel[1]])rr1
+RPˆ(ptsa[ptsel[1]],ptso[ptsel[1]])ˆˆ1
+RPr(ptsa[ptsel[2]],ptso[ptsel[2]])rr2
+RPˆ(ptsa[ptsel[2]],ptso[ptsel[2]])ˆˆ2
+¨((rr2-rr1)^2+(ˆˆ2-ˆˆ1)^2)dis
+RPˆ(ptsa[ptsel[2]],ptso[ptsel[2]])+varˆˆ3
+DelVar rr3
+right(solve(¨((rr3-rr1)^2+(ˆˆ3-ˆˆ1)^2)=dis,rr3))rr3
+PRx(rr3,ˆˆ3)xxx
+PRy(rr3,ˆˆ3)yyy
+©EQN DROITE
+©coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[1]]-yyy)/(ptsa[ptsel[1]]-xxx)eqn
+©ptsa[ptsel[1]]+disxxxx
+©droite(résol(¨((xxxx-ptsa[ptsel[1]])^2+(yyy-ptso[ptsel[1]])^2)=dis,xxxx))xxxx
+©eqn|x=xxxxyyyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+DelVar ptsel
+Goto menup
+
+©intersection
+Lbl din
+DelVar ohc
+PopUp {"2 droites","Droite et Cercle","2 cercles"},ohc
+If string(ohc)="ohc":Goto menup
+
+©deux droites
+If ohc=1 Then 
+main\flib("busy:3","slmsg:Points de la 1ere droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Points de la 2eme droite ?")
+sgsgeoan(1,3)
+If err=1:Goto menup
+sgsgeoan(1,4)
+If err=1:Goto menup
+coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[2]]-ptso[ptsel[1]])/(ptsa[ptsel[2]]-ptsa[ptsel[1]])eqnu
+coef*x-coef*ptsa[ptsel[3]]+ptso[ptsel[3]]|coef=(ptso[ptsel[4]]-ptso[ptsel[3]])/(ptsa[ptsel[4]]-ptsa[ptsel[3]])eqnd
+right(solve(eqnu=eqnd,x))xxx
+eqnu|x=xxxyyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+DelVar ptsel
+EndIf
+
+©droite et cercle
+If ohc=2 Then 
+main\flib("busy:3","slmsg:Points de la ligne ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Centre du cercle ?")
+sgsgeoan(1,3)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Point du cercle ?")
+sgsgeoan(1,4)
+If err=1:Goto menup
+coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[2]]-ptso[ptsel[1]])/(ptsa[ptsel[2]]-ptsa[ptsel[1]])eqnu
+solve((x-ptsa[ptsel[3]])^2+(y-ptso[ptsel[4]])^2=¨((ptsa[ptsel[4]]-ptsa[ptsel[3]])^2+(ptso[ptsel[4]]-ptso[ptsel[3]])^2)^2,y)eqnd
+If inString(string(eqnd),"or")0 Then 
+inString(string(eqnd),"or")pos
+©gauche(chaîne(eqnd),pos-2)eqnd
+right(string(eqnd),pos+2)eqnd
+expr(eqnd)eqnd
+right(eqnd)eqnd
+EndIf
+If inString(string(solve(eqnu=eqnd,x)),"or")0 Then 
+string(solve(eqnu=eqnd,x))xxx
+inString(xxx,"or")pos
+left(xxx,pos-2)xxx
+expr(xxx)xxx
+EndIf
+right(xxx)xxx
+eqnu|x=xxxyyy
+augment(ptsa,{xxx})ptsa:augment(ptso,{yyy})ptso
+RplcPic temp
+Line xxx-.1,yyy,xxx+.1,yyy:Line xxx,yyy-.1,xxx,yyy+.1
+EndIf
+DelVar ptsel
+Goto menup
+
+©ETUDE
+©longueur
+Lbl elo
+main\flib("busy:3","slmsg:Extremites du segment ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+ClrIO
+Pause "d = "&string(¨((ptsa[ptsel[2]]-ptsa[ptsel[1]])^2+(ptso[ptsel[2]]-ptso[ptsel[1]])^2))
+RplcPic temp
+DispG
+DelVar ptsel
+Goto menup
+
+©eqn dte
+Lbl ed
+main\flib("busy:3","slmsg:Points de la droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+ClrIO
+Pause "y = "&string(coef*x-coef*ptsa[ptsel[1]]+ptso[ptsel[1]]|coef=(ptso[ptsel[2]]-ptso[ptsel[1]])/(ptsa[ptsel[2]]-ptsa[ptsel[1]]))
+RplcPic temp
+DispG
+DelVar ptsel
+Goto menup
+
+©coordonnees
+Lbl eco
+main\flib("busy:3","slmsg:Coordonnees de quel point ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+ClrIO
+Pause "x = "&string(ptsa[ptsel[1]])
+Pause "y = "&string(ptso[ptsel[1]])
+RplcPic temp
+DispG
+DelVar ptsel
+Goto menup
+
+©perendiculaires
+Lbl epe
+main\flib("busy:3","slmsg:Points de la 1ere droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Points de la 2eme droite ?")
+sgsgeoan(1,3)
+If err=1:Goto menup
+sgsgeoan(1,4)
+If err=1:Goto menup
+©coordonnees
+ptsa[ptsel[2]]-ptsa[ptsel[1]]veca
+ptso[ptsel[2]]-ptso[ptsel[1]]veco
+ptsa[ptsel[4]]-ptsa[ptsel[3]]vecai
+ptso[ptsel[4]]-ptso[ptsel[3]]vecoi
+ClrIO
+If veca*vecai+veco*vecoi=0 Then 
+Dialog
+Title "SGSgeo - Resultat du test"
+Text ""
+Text "Ces droites sont perpendiculaires."
+Text ""
+EndDlog
+Else
+Dialog
+Title "SGSGEO - RESULTAT DU TEST"
+Text ""
+Text "Ces droites ne sont pas perpendiculaires."
+Text ""
+EndDlog
+EndIf
+Goto menup
+
+©paralleles
+Lbl epa
+main\flib("busy:3","slmsg:Points de la 1ere droite ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+sgsgeoan(1,2)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Points de la 2eme droite ?")
+sgsgeoan(1,3)
+If err=1:Goto menup
+sgsgeoan(1,4)
+If err=1:Goto menup
+©coordonnees
+ptsa[ptsel[2]]-ptsa[ptsel[1]]veca
+ptso[ptsel[2]]-ptso[ptsel[1]]veco
+ptsa[ptsel[4]]-ptsa[ptsel[3]]vecai
+ptso[ptsel[4]]-ptso[ptsel[3]]vecoi
+ClrIO
+If veca*vecoi+veco*vecai=0 Then 
+Dialog
+Title "SGSgeo - Resultat du test"
+Text ""
+Text "Ces droites sont paralleles."
+Text ""
+EndDlog
+Else
+Dialog
+Title "SGSgeo - Resultat du test"
+Text ""
+Text "Ces droites ne sont pas paralleles."
+Text ""
+EndDlog
+EndIf
+Goto menup
+
+©eqn. cercle
+Lbl ec
+main\flib("busy:3","slmsg:Centre du cercle ?")
+sgsgeoan(1,1)
+If err=1:Goto menup
+main\flib("busy:3","slmsg:Point du cercle ?")
+sgsgeoan(1,2)
+If err=1:Goto menup
+ClrIO
+Pause (x-ptsa[ptsel[1]])^2+(y-ptso[ptsel[2]])^2=¨((ptsa[ptsel[2]]-ptsa[ptsel[1]])^2+(ptso[ptsel[2]]-ptso[ptsel[1]])^2)^2
+RplcPic temp
+DispG
+Goto menup
+
+Lbl exite
+ClrDraw:FnOn:DispHome:­10xmin:10xmax:1xscl:­10ymin:10ymax:1yscl
+sgsgeoan(8,0)
+
+EndPrgm
