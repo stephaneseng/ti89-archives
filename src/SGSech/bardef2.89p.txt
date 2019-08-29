@@ -1,0 +1,4 @@
+(x,y,xx,yy)
+Prgm
+main\flib("fillrect:"&string(x)&","&string(xx+16)&","&string(y)&","&string(yy+16)&"")
+EndPrgm
