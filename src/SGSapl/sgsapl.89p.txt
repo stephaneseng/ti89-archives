@@ -1,11 +1,11 @@
 ()
 Prgm
-getMode("all")regl
+getMode("all")→regl
 
 ©PREPARATION
 Lbl reset
 Local tt,nb,x,t
-FnOff:ClrGraph:ClrDraw:setGraph("Axes","Off"):ZoomDec:RplcPic imgapl:­1x:18yy:45xx:6ttt:­1tour:1optu:1optd:1optt
+FnOff:ClrGraph:ClrDraw:setGraph("Axes","Off"):ZoomDec:RplcPic imgapl:­1→x:18→yy:45→xx:6→ttt:­1→tour:1→optu:1→optd:1→optt
 
 ©DEFINIR FONCTION
 Define sgsapla(x)=Func
@@ -66,14 +66,14 @@ StoPic masq,2,37,85,8
 StoPic mas,2,37,9,5
 
 ©LISTE
-newList(22)boi
-newList(22)bboi
+newList(22)→boi
+newList(22)→bboi
 For tt,1,22,1
 Lbl charr
-rand(22)nb
+rand(22)→nb
 If sgsaplan(nb)=1 Then 
-nbboi[tt]
-x+1x
+nb→boi[tt]
+x+1→x
 For t,­4.2+.3*x,­3.9+.3*x,.1
 Line t,3.6,t,3
 EndFor
@@ -91,21 +91,21 @@ StoPic msk,2,37,34,5
 ©CONVERSION LISTE
 For tt,1,22,1
 ©CONBOI
-If boi[tt]=1:.01boi[tt]:If boi[tt]=2:.5boi[tt]:If boi[tt]=3:1boi[tt]:If boi[tt]=4:100boi[tt]:If boi[tt]=5:500boi[tt]:If boi[tt]=6:1000boi[tt]:If boi[tt]=7:2000boi[tt]:If boi[tt]=8:5000boi[tt]:If boi[tt]=9:6000boi[tt]:If boi[tt]=10:7500boi[tt]:If boi[tt]=11:10000boi[tt]:If boi[tt]=12:15000boi[tt]:If boi[tt]=13:20000boi[tt]:If boi[tt]=14:25000boi[tt]:If boi[tt]=15:30000boi[tt]:If boi[tt]=16:40000boi[tt]:If boi[tt]=17:50000boi[tt]:If boi[tt]=18:75000boi[tt]:If boi[tt]=19:100000boi[tt]:If boi[tt]=20:150000boi[tt]:If boi[tt]=21:250000boi[tt]:If boi[tt]=22:500000boi[tt]
+If boi[tt]=1:.01→boi[tt]:If boi[tt]=2:.5→boi[tt]:If boi[tt]=3:1→boi[tt]:If boi[tt]=4:100→boi[tt]:If boi[tt]=5:500→boi[tt]:If boi[tt]=6:1000→boi[tt]:If boi[tt]=7:2000→boi[tt]:If boi[tt]=8:5000→boi[tt]:If boi[tt]=9:6000→boi[tt]:If boi[tt]=10:7500→boi[tt]:If boi[tt]=11:10000→boi[tt]:If boi[tt]=12:15000→boi[tt]:If boi[tt]=13:20000→boi[tt]:If boi[tt]=14:25000→boi[tt]:If boi[tt]=15:30000→boi[tt]:If boi[tt]=16:40000→boi[tt]:If boi[tt]=17:50000→boi[tt]:If boi[tt]=18:75000→boi[tt]:If boi[tt]=19:100000→boi[tt]:If boi[tt]=20:150000→boi[tt]:If boi[tt]=21:250000→boi[tt]:If boi[tt]=22:500000→boi[tt]
 EndFor
 For t,2.5,4.2,.1
 Line t,3.6,t,3
 EndFor
 
 ©BOITE PERSO
-0c:While c=0:RplcPic masq,2,37:rand(22)n:PtText string(n),­4.1,3.6:Line ­4.3,2.9,4.3,2.9:main\flib("wait:1"):getKey()c:EndWhile
+0→c:While c=0:RplcPic masq,2,37:rand(22)→n:PtText string(n),­4.1,3.6:Line ­4.3,2.9,4.3,2.9:main\flib("wait:1"):getKey()→c:EndWhile
 Dialog
 Title "SGSAPL - INFORMATION"
 Text ""
 Text "Vous obtenez la boite "&string(n)&"."
 Text ""
 EndDlog
-nboip
+n→boip
 
 ©MENU PRINCIPAL
 Lbl menup
@@ -119,24 +119,24 @@ Text ""
 Text "Le banquier vous fait une proposition."
 Text ""
 EndDlog
-©nbrAléat(6)ban
+©nbrAléat(6)→ban
 ©If ban=1 or ban=3 or ban=5 Then
 PtText "ECHANGE",­4.1,3.6:Line ­4.3,2.9,4.3,2.9
-1spec
+1→spec
 Goto ouvr
 EndIf
 ©If ban=2 or ban=4 or ban=6 Then
-©nouvList(0)offre
+©nouvList(0)→offre
 ©For ttt,1,22,1
 ©For tttt,1,22,1
 ©If bboi[tttt]=ttt:Goto cont
-©augmente(offre,{boi[ttt]})offre
+©augmente(offre,{boi[ttt]})→offre
 ©EndFor
 ©Lbl cont
 ©EndFor
-©tronc(moyenne(offre))prop
+©tronc(moyenne(offre))→prop
 ©PtTexte "ACHAT: "&chaîne(prop),­4.1,3.6:Lign ­4.3,2.9,4.3,2.9
-©2spec
+©2→spec
 ©Goto ouvr
 ©EndIf
 ©EndIf
@@ -144,11 +144,11 @@ EndIf
 
 ©MENU PRINCIPAL (SUITE)
 Lbl menupp
-0spec:0specc
+0→spec:0→specc
 
 ©FIN DU JEU
 If tour=20 Then 
-boi[boip]gain
+boi[boip]→gain
 Lbl fin
 Dialog
 Title "SGSAPL - FIN DU JEU"
@@ -219,7 +219,7 @@ Goto menup
 
 ©JOUER
 Lbl jeu
-If spec=1:1specc
+If spec=1:1→specc
 DelVar sel
 
 ©MODE ENTRER
@@ -232,47 +232,47 @@ Request "Numero",sel,0
 Text ""
 EndDlog
 If ok=0 or sel="":Goto menup
-expr(sel)sel:If sel>22 or selœ0:Goto menup
+expr(sel)→sel:If sel>22 or selœ0:Goto menup
 ©BOII
-If sel=1 or sel=2 or sel=3 or sel=4:18yy:If sel=1:45xx:If sel=2:65xx:If sel=3:85xx:If sel=4:105xx:If sel=5 or sel=6 or sel=7 or sel=8 or sel=9:30y:If sel=5:35xx:If sel=6:55xx:If sel=7:75xx:If sel=8:95xx:If sel=9:115xx:If sel=10 or sel=11 or sel=12 or sel=13:42yy:If sel=10:45xx:If sel=11:65xx:If sel=12:85xx:If sel=13:105xx:If sel=14 or sel=15 or sel=16 or sel=17 or sel=18:54yy:If sel=14:35xx:If sel=15:55xx:If sel=16:75xx:If sel=17:95xx:If sel=18:11xx:If sel=19 or sel=20 or sel=21 or sel=22:66yy:If sel=19:45xx:If sel=20:65xx:If sel=21:85xx:If sel=22:105xx
+If sel=1 or sel=2 or sel=3 or sel=4:18→yy:If sel=1:45→xx:If sel=2:65→xx:If sel=3:85→xx:If sel=4:105→xx:If sel=5 or sel=6 or sel=7 or sel=8 or sel=9:30→y:If sel=5:35→xx:If sel=6:55→xx:If sel=7:75→xx:If sel=8:95→xx:If sel=9:115→xx:If sel=10 or sel=11 or sel=12 or sel=13:42→yy:If sel=10:45→xx:If sel=11:65→xx:If sel=12:85→xx:If sel=13:105→xx:If sel=14 or sel=15 or sel=16 or sel=17 or sel=18:54→yy:If sel=14:35→xx:If sel=15:55→xx:If sel=16:75→xx:If sel=17:95→xx:If sel=18:11→xx:If sel=19 or sel=20 or sel=21 or sel=22:66→yy:If sel=19:45→xx:If sel=20:65→xx:If sel=21:85→xx:If sel=22:105→xx
 XorPic mask,yy,xx
 Goto iboi
 EndIf
 
 XorPic mask,yy,xx
-0c:main\flib("busy:3"):While c=0:getKey()c:EndWhile
-If c340 and c337 and c344 and c338 and c13 and c264 Then :Goto jeu:EndIf
+0→c:main\flib("busy:3"):While c=0:getKey()→c:EndWhile
+If c≠340 and c≠337 and c≠344 and c≠338 and c≠13 and c≠264 Then :Goto jeu:EndIf
 If c=264 Then 
 XorPic mask,yy,xx
 Goto menup
 EndIf
 If c=340 Then 
 XorPic mask,yy,xx
-xx+20xx
-If (yy=18 or yy=42 or yy=66) and xx>105:45xx
-If (yy=30 or yy=54) and xx>115:35xx
+xx+20→xx
+If (yy=18 or yy=42 or yy=66) and xx>105:45→xx
+If (yy=30 or yy=54) and xx>115:35→xx
 Goto jeu
 EndIf
 If c=337 Then 
 XorPic mask,yy,xx
-xx-20xx
-If (yy=18 or yy=42 or yy=66) and xx<45:105xx
-If (yy=30 or yy=54) and xx<35:115xx
+xx-20→xx
+If (yy=18 or yy=42 or yy=66) and xx<45:105→xx
+If (yy=30 or yy=54) and xx<35:115→xx
 Goto jeu
 EndIf
 If c=344 Then 
 XorPic mask,yy,xx
-If yy=18 or yy=42:35xx
-If yy=30 or yy=54:45xx
-If yy=66 Then :18yy:Goto jeu:EndIf
-yy+12yy
+If yy=18 or yy=42:35→xx
+If yy=30 or yy=54:45→xx
+If yy=66 Then :18→yy:Goto jeu:EndIf
+yy+12→yy
 EndIf
 If c=338 Then 
 XorPic mask,yy,xx
-If yy=42 or yy=66:35xx
-If yy=30 or yy=54:45xx
-If yy=18 Then :66yy:Goto jeu:EndIf
-yy-12yy
+If yy=42 or yy=66:35→xx
+If yy=30 or yy=54:45→xx
+If yy=18 Then :66→yy:Goto jeu:EndIf
+yy-12→yy
 EndIf
 If c=13 Then 
 ©OuExcImg mask,yy,xx
@@ -283,7 +283,7 @@ Goto jeu
 ©IDENTIFICATION BOITE
 Lbl idboi
 ©IBOI
-If yy=18 Then :If xx=45:1sel:If xx=65:2sel:If xx=85:3sel:If xx=105:4sel:EndIf:If yy=30 Then :If xx=35:5sel:If xx=55:6sel:If xx=75:7sel:If xx=95:8sel:If xx=115:9sel:EndIf:If yy=42 Then :If xx=45:10sel:If xx=65:11sel:If xx=85:12sel:If xx=105:13sel:EndIf:If yy=54 Then :If xx=35:14sel:If xx=55:15sel:If xx=75:16sel:If xx=95:17sel:If xx=115:18sel:EndIf:If yy=66 Then :If xx=45:19sel:If xx=65:20sel:If xx=85:21sel:If xx=105:22sel:EndIf
+If yy=18 Then :If xx=45:1→sel:If xx=65:2→sel:If xx=85:3→sel:If xx=105:4→sel:EndIf:If yy=30 Then :If xx=35:5→sel:If xx=55:6→sel:If xx=75:7→sel:If xx=95:8→sel:If xx=115:9→sel:EndIf:If yy=42 Then :If xx=45:10→sel:If xx=65:11→sel:If xx=85:12→sel:If xx=105:13→sel:EndIf:If yy=54 Then :If xx=35:14→sel:If xx=55:15→sel:If xx=75:16→sel:If xx=95:17→sel:If xx=115:18→sel:EndIf:If yy=66 Then :If xx=45:19→sel:If xx=65:20→sel:If xx=85:21→sel:If xx=105:22→sel:EndIf
 Lbl iboi
 If sel=boip Then 
 Dialog
@@ -312,7 +312,7 @@ Text "Echanger "&string(boip)&" contre "&string(sel)&" ?"
 Text ""
 EndDlog
 If ok=0:Goto jeu
-selboip
+sel→boip
 Dialog
 Title "SGSAPL - ECHANGE"
 Text ""
@@ -327,8 +327,8 @@ Goto ouvr
 ©OUVRIR ?
 Lbl ouvr
 XorPic maskk,2,ttt
-0c:main\flib("busy:3"):While c=0:getKey()c:EndWhile
-If c337 and c340 and c13 and c264 Then :Goto ouvr:EndIf
+0→c:main\flib("busy:3"):While c=0:getKey()→c:EndWhile
+If c≠337 and c≠340 and c≠13 and c≠264 Then :Goto ouvr:EndIf
 If c=264 Then 
 XorPic mask,yy,xx
 XorPic maskk,2,ttt
@@ -336,7 +336,7 @@ Goto jeu
 EndIf
 If c=337 or c=340 Then 
 XorPic maskk,2,ttt
-If ttt=6 Then :130ttt:Else:6ttt:EndIf
+If ttt=6 Then :130→ttt:Else:6→ttt:EndIf
 EndIf
 If c=13 Then 
 XorPic maskk,2,ttt
@@ -348,7 +348,7 @@ Goto jeu
 EndIf
 If ttt=6 Then :RplcPic mas,yy,xx
 If spec=1:Goto jeu
-If spec=2 Then :propgain:Goto fin:EndIf
+If spec=2 Then :prop→gain:Goto fin:EndIf
 Goto ouvrs
 EndIf
 EndIf
@@ -357,8 +357,8 @@ Goto ouvr
 ©OUVRIR (SUITE)
 Lbl ouvrs
 If sgsapla(sel)=1 Then 
-tour+1tour
-selbboi[tour+1]
+tour+1→tour
+sel→bboi[tour+1]
 Else
 Dialog
 Title "SGSAPL - ERREUR"

@@ -35,76 +35,76 @@ Title "Recherche dans A"
 DropDown "Nom de l'EC",{"Actinium","Aluminium","Americium","Antimoine","Argent""Argon","Arsenic","Astate","Azote"},pa
 EndDlog
 If pa=1 Then 
-"Ac"sym
-"Actinium"nom
-"89"z
-"227"m
-"227"mm
-31x:39y:63xx:67yy
+"Ac"→sym
+"Actinium"→nom
+"89"→z
+"227"→m
+"227"→mm
+31→x:39→y:63→xx:67→yy
 EndIf
 If pa=2 Then 
-"Al"sym
-"Aluminium"nom
-"13"z
-"27"m
-"27.0"mm
-103x:111y:23xx:27yy
+"Al"→sym
+"Aluminium"→nom
+"13"→z
+"27"→m
+"27.0"→mm
+103→x:111→y:23→xx:27→yy
 EndIf
 If pa=3 Then 
-"Am"sym
-"Americium"nom
-"95"z
-"243"m
-"243"mm
-79x:87y:63xx:67yy
+"Am"→sym
+"Americium"→nom
+"95"→z
+"243"→m
+"243"→mm
+79→x:87→y:63→xx:67→yy
 EndIf
 If pa=4 Then 
-"Sb"sym
-"Antimoine"nom
-"51"z
-"121"m
-"121.7"mm
-119x:127y:33xx:37yy
+"Sb"→sym
+"Antimoine"→nom
+"51"→z
+"121"→m
+"121.7"→mm
+119→x:127→y:33→xx:37→yy
 EndIf
 If pa=5 Then 
-"Ag"sym
-"Argent"nom
-"47"z
-"107"m
-"107.9"mm
-87x:95y:33xx:37yy
+"Ag"→sym
+"Argent"→nom
+"47"→z
+"107"→m
+"107.9"→mm
+87→x:95→y:33→xx:37→yy
 EndIf
 If pa=6 Then 
-"Ar"sym
-"Argon"nom
-"18"z
-"40"m
-"39.9"mm
-143x:151y:23xx:27yy
+"Ar"→sym
+"Argon"→nom
+"18"→z
+"40"→m
+"39.9"→mm
+143→x:151→y:23→xx:27→yy
 EndIf
 If pa=7 Then 
-"As"sym
-"Arsenic"nom
-"33"z
-"75"m
-"74.9"mm
-119x:127y:28xx:32yy
+"As"→sym
+"Arsenic"→nom
+"33"→z
+"75"→m
+"74.9"→mm
+119→x:127→y:28→xx:32→yy
 EndIf
 If pa=8 Then 
-"At"sym
-"Astate"nom
-"85"z
-"210"m
-"210"mm
-135x:143y:38xx:42yy
+"At"→sym
+"Astate"→nom
+"85"→z
+"210"→m
+"210"→mm
+135→x:143→y:38→xx:42→yy
 EndIf
 If pa=9 Then 
-"N"sym
-"Azote"nom
-"7"z
-"14"m
-"14.0"mm
-119x:127y:18xx:22yy
+"N"→sym
+"Azote"→nom
+"7"→z
+"14"→m
+"14.0"→mm
+119→x:127→y:18→xx:22→yy
 EndIf
 EndIf
 
@@ -114,52 +114,52 @@ Title "Recherche dans B"
 DropDown "Nom de l'EC",{"Baryum","Berkelium","Beryllium","Bismuth","Bore","Brome"},pb
 EndDlog
 If pb=1 Then 
-"Ba"sym
-"Baryum"nom
-"56"z
-"138"m
-"137.3"mm
-15x:23y:38xx:42yy
+"Ba"→sym
+"Baryum"→nom
+"56"→z
+"138"→m
+"137.3"→mm
+15→x:23→y:38→xx:42→yy
 EndIf
 If pb=2 Then 
-"Bk"sym
-"Berkelium"nom
-"97"z
-"247"m
-"247"mm
-95x:103y:63xx:67yy
+"Bk"→sym
+"Berkelium"→nom
+"97"→z
+"247"→m
+"247"→mm
+95→x:103→y:63→xx:67→yy
 EndIf
 If pb=3 Then 
-"Be"sym
-"Beryllium"nom
-"4"z
-"9"m
-"9.0"mm
-15x:23y:18xx:22yy
+"Be"→sym
+"Beryllium"→nom
+"4"→z
+"9"→m
+"9.0"→mm
+15→x:23→y:18→xx:22→yy
 EndIf
 If pb=4 Then 
-"Bi"sym
-"Bismuth"nom
-"83"z
-"209"m
-"209.0"mm
-119x:127y:38xx:42yy
+"Bi"→sym
+"Bismuth"→nom
+"83"→z
+"209"→m
+"209.0"→mm
+119→x:127→y:38→xx:42→yy
 EndIf
 If pb=5 Then 
-"B"sym
-"Bore"nom
-"5"z
-"11"m
-"10.8"mm
-103x:111y:18xx:22yy
+"B"→sym
+"Bore"→nom
+"5"→z
+"11"→m
+"10.8"→mm
+103→x:111→y:18→xx:22→yy
 EndIf
 If pb=6 Then 
-"Br"sym
-"Brome"nom
-"35"z
-"79"m
-"79.9"mm
-135x:143y:28xx:32yy
+"Br"→sym
+"Brome"→nom
+"35"→z
+"79"→m
+"79.9"→mm
+135→x:143→y:28→xx:32→yy
 EndIf
 EndIf
 
@@ -169,92 +169,92 @@ Title "Recherche dans C"
 DropDown "Nom de l'EC",{"Cadmium","Calcium","Californium","Carbone","Cerium","Cesium","Chlore","Chrome","Cobalt","Cuivre","Curium"},pc
 EndDlog
 If pc=1 Then 
-"Cd"sym
-"Cadmium"nom
-"48"z
-"114"m
-"112.4"mm
-95x:103y:33xx:37yy
+"Cd"→sym
+"Cadmium"→nom
+"48"→z
+"114"→m
+"112.4"→mm
+95→x:103→y:33→xx:37→yy
 EndIf
 If pc=2 Then 
-"Ca"sym
-"Calcium"nom
-"20"z
-"40"m
-"40.1"mm
-15x:23y:28xx:32yy
+"Ca"→sym
+"Calcium"→nom
+"20"→z
+"40"→m
+"40.1"→mm
+15→x:23→y:28→xx:32→yy
 EndIf
 If pc=3 Then 
-"Cf"sym
-"Californium"nom
-"98"z
-"251"m
-"251"mm
-103x:111y:63xx:67yy
+"Cf"→sym
+"Californium"→nom
+"98"→z
+"251"→m
+"251"→mm
+103→x:111→y:63→xx:67→yy
 EndIf
 If pc=4 Then 
-"C"sym
+"C"→sym
 "Carbone"
-"6"z
-"12"m
-"12"mm
-111x:119y:18xx:22yy
+"6"→z
+"12"→m
+"12"→mm
+111→x:119→y:18→xx:22→yy
 EndIf
 If pc=5 Then 
-"Ce"sym
-"Cerium"nom
-"58"z
-"140"m
-"140.1"mm
-39x:47y:58xx:62yy
+"Ce"→sym
+"Cerium"→nom
+"58"→z
+"140"→m
+"140.1"→mm
+39→x:47→y:58→xx:62→yy
 EndIf
 If pc=6 Then 
-"Cs"sym
-"Cesium"nom
-"55"z
-"133"m
-"132.9"mm
-7x:15y:38xx:42yy
+"Cs"→sym
+"Cesium"→nom
+"55"→z
+"133"→m
+"132.9"→mm
+7→x:15→y:38→xx:42→yy
 EndIf
 If pc=7 Then 
-"Cl"sym
-"Chlore"nom
-"17"z
-"35"m
-"35.5"mm
-135x:143y:23xx:27yy
+"Cl"→sym
+"Chlore"→nom
+"17"→z
+"35"→m
+"35.5"→mm
+135→x:143→y:23→xx:27→yy
 EndIf
 If pc=8 Then 
-"Cr"sym
-"Chrome"nom
-"24"z
-"52"m
-"52"mm
-47x:55y:28xx:32yy
+"Cr"→sym
+"Chrome"→nom
+"24"→z
+"52"→m
+"52"→mm
+47→x:55→y:28→xx:32→yy
 EndIf
 If pc=9 Then 
-"Co"sym
-"Cobalt"nom
-"27"z
-"59"m
-"58.9"mm
-71x:79y:28xx:32yy
+"Co"→sym
+"Cobalt"→nom
+"27"→z
+"59"→m
+"58.9"→mm
+71→x:79→y:28→xx:32→yy
 EndIf
 If pc=10 Then 
-"Cu"sym
-"Cuivre"nom
-"29"z
-"63"m
-"63.5"mm
-87x:95y:28xx:32yy
+"Cu"→sym
+"Cuivre"→nom
+"29"→z
+"63"→m
+"63.5"→mm
+87→x:95→y:28→xx:32→yy
 EndIf
 If pc=11 Then 
-"Cm"sym
-"Curium"nom
-"96"z
-"247"m
-"247"mm
-87x:95y:63xx:67yy
+"Cm"→sym
+"Curium"→nom
+"96"→z
+"247"→m
+"247"→mm
+87→x:95→y:63→xx:67→yy
 EndIf
 EndIf
 
@@ -264,44 +264,44 @@ Title "Recherche dans D-E"
 DropDown "Nom de l'EC",{"Dysprosium","Einsteinium","Erbium","Etain","Europium"},pde
 EndDlog
 If pde=1 Then 
-"Dy"sym
-"Dysprosium"nom
-"66"z
-"164"m
-"162.5"mm
-103x:111y:58xx:62yy
+"Dy"→sym
+"Dysprosium"→nom
+"66"→z
+"164"→m
+"162.5"→mm
+103→x:111→y:58→xx:62→yy
 EndIf
 If pde=2 Then 
-"Es"sym
-"Einsteinium"nom
-"99"z
-"254"m
-"254"mm
-111x:119y:63xx:67yy
+"Es"→sym
+"Einsteinium"→nom
+"99"→z
+"254"→m
+"254"→mm
+111→x:119→y:63→xx:67→yy
 EndIf
 If pde=3 Then 
-"Er"sym
-"Erbium"nom
-"68"z
-"166"m
-"167.3"mm
-119x:127y:58xx:62yy
+"Er"→sym
+"Erbium"→nom
+"68"→z
+"166"→m
+"167.3"→mm
+119→x:127→y:58→xx:62→yy
 EndIf
 If pde=4 Then 
-"Sn"sym
-"Etain"nom
-"50"z
-"120"m
-"118.7"mm
-111x:119y:33xx:37yy
+"Sn"→sym
+"Etain"→nom
+"50"→z
+"120"→m
+"118.7"→mm
+111→x:119→y:33→xx:37→yy
 EndIf
 If pde=5 Then 
-"Eu"sym
-"Europium"nom
-"63"z
-"153"m
-"152.0"mm
-79x:87y:58xx:62yy
+"Eu"→sym
+"Europium"→nom
+"63"→z
+"153"→m
+"152.0"→mm
+79→x:87→y:58→xx:62→yy
 EndIf
 EndIf
 
@@ -311,60 +311,60 @@ Title "Recherche dans F-G"
 DropDown "Nom de l'EC",{"Fer","Fermium","Fluor","Francium","Gadolinium","Gallium","Germanium"},pfg
 EndDlog
 If pfg=1 Then 
-"Fe"sym
-"Fer"nom
-"26"z
-"56"m
-"55.8"mm
-63x:71y:28xx:32yy
+"Fe"→sym
+"Fer"→nom
+"26"→z
+"56"→m
+"55.8"→mm
+63→x:71→y:28→xx:32→yy
 EndIf
 If pfg=2 Then 
-"Fm"sym
-"Fermium"nom
-"100"z
-"257"m
-"257"mm
-119x:127y:63xx:67yy
+"Fm"→sym
+"Fermium"→nom
+"100"→z
+"257"→m
+"257"→mm
+119→x:127→y:63→xx:67→yy
 EndIf
 If pfg=3 Then 
-"F"sym
-"Fluor"nom
-"9"z
-"19"m
-"19.0"mm
-135x:143y:18xx:22yy
+"F"→sym
+"Fluor"→nom
+"9"→z
+"19"→m
+"19.0"→mm
+135→x:143→y:18→xx:22→yy
 EndIf
 If pfg=4 Then 
-"Fr"sym
-"Francium"nom
-"87"z
-"223"m
-"223"mm
-7x:15y:43xx:47yy
+"Fr"→sym
+"Francium"→nom
+"87"→z
+"223"→m
+"223"→mm
+7→x:15→y:43→xx:47→yy
 EndIf
 If pfg=5 Then 
-"Gd"sym
-"Gadolidium"nom
-"64"z
-"158"m
-"157.2"mm
-87x:95y:58xx:62yy
+"Gd"→sym
+"Gadolidium"→nom
+"64"→z
+"158"→m
+"157.2"→mm
+87→x:95→y:58→xx:62→yy
 EndIf
 If pfg=6 Then 
-"Ga"sym
-"Gallium"nom
-"31"z
-"69"m
-"69.7"mm
-103x:111y:28xx:32yy
+"Ga"→sym
+"Gallium"→nom
+"31"→z
+"69"→m
+"69.7"→mm
+103→x:111→y:28→xx:32→yy
 EndIf
 If pfg=7 Then 
-"Ge"sym
-"Germanium"nom
-"32"z
-"74"m
-"72.6"mm
-111x:119y:28xx:32yy
+"Ge"→sym
+"Germanium"→nom
+"32"→z
+"74"→m
+"72.6"→mm
+111→x:119→y:28→xx:32→yy
 EndIf
 EndIf
 
@@ -374,52 +374,52 @@ Title "Recherche dans H"
 DropDown "Nom de l'EC",{"Hafnium","Hahnium","Hassium","Helium","Holmium","Hydrogene"},ph
 EndDlog
 If ph=1 Then 
-"Hf"sym
-"Hafnium"nom
-"72"z
-"180"m
-"178.5"mm
-31x:39y:38xx:42yy
+"Hf"→sym
+"Hafnium"→nom
+"72"→z
+"180"→m
+"178.5"→mm
+31→x:39→y:38→xx:42→yy
 EndIf
 If ph=2 Then 
-"Ha"sym
-"Hahnium"nom
-"105"z
-"262"m
-"262"mm
-39x:47y:43xx:47yy
+"Ha"→sym
+"Hahnium"→nom
+"105"→z
+"262"→m
+"262"→mm
+39→x:47→y:43→xx:47→yy
 EndIf
 If ph=3 Then 
-"Hs"sym
+"Hs"→sym
 "Hassium"
-"108"z
-"?"m
-"?"mm
-63x:71y:43xx:47yy
+"108"→z
+"?"→m
+"?"→mm
+63→x:71→y:43→xx:47→yy
 EndIf
 If ph=4 Then 
-"He"sym
-"Helium"nom
-"2"z
-"4"m
-"4.0"mm
-143x:151y:13xx:17yy
+"He"→sym
+"Helium"→nom
+"2"→z
+"4"→m
+"4.0"→mm
+143→x:151→y:13→xx:17→yy
 EndIf
 If ph=5 Then 
-"Ho"sym
-"Holmium"nom
-"67"z
-"165"m
-"164.9"mm
-111x:119y:58xx:62yy
+"Ho"→sym
+"Holmium"→nom
+"67"→z
+"165"→m
+"164.9"→mm
+111→x:119→y:58→xx:62→yy
 EndIf
 If ph=6 Then 
-"H"sym
-"Hydrogene"nom
-"1"z
-"1"m
-"1.0"mm
-7x:15y:13xx:17yy
+"H"→sym
+"Hydrogene"→nom
+"1"→z
+"1"→m
+"1.0"→mm
+7→x:15→y:13→xx:17→yy
 EndIf
 EndIf
 
@@ -437,44 +437,44 @@ Title "Recherche dans I-K"
 DropDown "Nom de l'EC",{"Indium","Iode","Iridium","Krypton","Kurtchatovium"},pik
 EndDlog
 If pik=1 Then 
-"In"sym
-"Indium"nom
-"49"z
-"115"m
-"114.8"mm
-103x:111y:33xx:37yy
+"In"→sym
+"Indium"→nom
+"49"→z
+"115"→m
+"114.8"→mm
+103→x:111→y:33→xx:37→yy
 EndIf
 If pik=2 Then 
-"I"sym
-"Iode"nom
-"53"z
-"127"m
-"126.9"mm
-135x:143y:33xx:37yy
+"I"→sym
+"Iode"→nom
+"53"→z
+"127"→m
+"126.9"→mm
+135→x:143→y:33→xx:37→yy
 EndIf
 If pik=3 Then 
-"Ir"sym
-"Iridium"nom
-"77"z
-"193"m
-"192.2"mm
-71x:79y:38xx:42yy
+"Ir"→sym
+"Iridium"→nom
+"77"→z
+"193"→m
+"192.2"→mm
+71→x:79→y:38→xx:42→yy
 EndIf
 If pik=4 Then 
-"Kr"sym
-"Krypton"nom
-"36"z
-"84"m
-"83.4"mm
-143x:151y:28xx:32yy
+"Kr"→sym
+"Krypton"→nom
+"36"→z
+"84"→m
+"83.4"→mm
+143→x:151→y:28→xx:32→yy
 EndIf
 If pik=5 Then 
-"Ku"sym
-"Kurtchatovium"nom
-"104"z
-"261"m
-"261"mm
-31x:39y:43xx:47yy
+"Ku"→sym
+"Kurtchatovium"→nom
+"104"→z
+"261"→m
+"261"→mm
+31→x:39→y:43→xx:47→yy
 EndIf
 EndIf
 
@@ -484,36 +484,36 @@ Title "Recherche dans L"
 DropDown "Nom de l'EC",{"Lanthane","Lawrencium","Lithium","Lutetium"},pl
 EndDlog
 If pl=1 Then 
-"La"sym
-"Lanthane"nom
-"57"z
-"139"m
-"138.9"mm
-31x:39y:58xx:62yy
+"La"→sym
+"Lanthane"→nom
+"57"→z
+"139"→m
+"138.9"→mm
+31→x:39→y:58→xx:62→yy
 EndIf
 If pl=2 Then 
-"Lr"sym
-"Lawrencium"nom
-"103"z
-"260"m
-"260"mm
-143x:151y:63xx:67yy
+"Lr"→sym
+"Lawrencium"→nom
+"103"→z
+"260"→m
+"260"→mm
+143→x:151→y:63→xx:67→yy
 EndIf
 If pl=3 Then 
-"Li"sym
-"Lithium"nom
-"3"z
-"7"m
-"6.9"mm
-7x:15y:18xx:22yy
+"Li"→sym
+"Lithium"→nom
+"3"→z
+"7"→m
+"6.9"→mm
+7→x:15→y:18→xx:22→yy
 EndIf
 If pl=4 Then 
-"Lu"sym
-"Lutetium"nom
-"71"z
-"175"m
-"175.0"mm
-143x:151y:58xx:62yy
+"Lu"→sym
+"Lutetium"→nom
+"71"→z
+"175"→m
+"175.0"→mm
+143→x:151→y:58→xx:62→yy
 EndIf
 EndIf
 
@@ -523,52 +523,52 @@ Title "Recherche dans M"
 DropDown "Nom de l'EC",{"Magnesium","Manganese","Meitnerium","Mendelévium","Mercure","Molybdene"},pm
 EndDlog
 If pm=1 Then 
-"Mg"sym
-"Magnesium"nom
-"12"z
-"24"m
-"24.3"mm
-15x:23y:23xx:27yy
+"Mg"→sym
+"Magnesium"→nom
+"12"→z
+"24"→m
+"24.3"→mm
+15→x:23→y:23→xx:27→yy
 EndIf
 If pm=2 Then 
-"Mn"sym
-"Manganese"nom
-"25"z
-"55"m
-"54.9"mm
-55x:63y:28xx:32yy
+"Mn"→sym
+"Manganese"→nom
+"25"→z
+"55"→m
+"54.9"→mm
+55→x:63→y:28→xx:32→yy
 EndIf
 If pm=3 Then 
-"Mt"sym
-"Meitnerium"nom
-"109"z
-"?"m
-"?"mm
-71x:79y:43xx:47yy
+"Mt"→sym
+"Meitnerium"→nom
+"109"→z
+"?"→m
+"?"→mm
+71→x:79→y:43→xx:47→yy
 EndIf
 If pm=4 Then 
-"Md"sym
-"Mendelevium"nom
-"101"z
-"258"m
-"258"mm
-127x:135y:63xx:67yy
+"Md"→sym
+"Mendelevium"→nom
+"101"→z
+"258"→m
+"258"→mm
+127→x:135→y:63→xx:67→yy
 EndIf
 If pm=5 Then 
-"Hg"sym
-"Mercure"nom
-"80"z
-"202"m
-"200.6"mm
-95x:103y:38xx:42yy
+"Hg"→sym
+"Mercure"→nom
+"80"→z
+"202"→m
+"200.6"→mm
+95→x:103→y:38→xx:42→yy
 EndIf
 If pm=6 Then 
-"Mo"sym
-"Molybdene"nom
-"42"z
-"98"m
-"95.9"mm
-47x:55y:33xx:37yy
+"Mo"→sym
+"Molybdene"→nom
+"42"→z
+"98"→m
+"95.9"→mm
+47→x:55→y:33→xx:37→yy
 EndIf
 EndIf
 
@@ -578,60 +578,60 @@ Title "Recherche dans N"
 DropDown "Nom de l'EC",{"Neodyme","Neon","Neptunium","Nickel","Nielsbohrium","Niobium","Nobelium"},pn
 EndDlog
 If pn=1 Then 
-"Nd"sym
-"Neodyme"nom
-"60"z
-"142"m
-"144.2"mm
-55x:63y:58xx:62yy
+"Nd"→sym
+"Neodyme"→nom
+"60"→z
+"142"→m
+"144.2"→mm
+55→x:63→y:58→xx:62→yy
 EndIf
 If pn=2 Then 
-"Ne"sym
-"Neon"nom
-"10"z
-"20"m
-"20.2"mm
-143x:151y:18xx:22yy
+"Ne"→sym
+"Neon"→nom
+"10"→z
+"20"→m
+"20.2"→mm
+143→x:151→y:18→xx:22→yy
 EndIf
 If pn=3 Then 
-"Np"sym
-"Neptunium"nom
-"93"z
-"237"m
-"237"mm
-63x:71y:63xx:67yy
+"Np"→sym
+"Neptunium"→nom
+"93"→z
+"237"→m
+"237"→mm
+63→x:71→y:63→xx:67→yy
 EndIf
 If pn=4 Then 
-"Ni"sym
-"Nickel"nom
-"28"z
-"58"m
-"58.7"mm
-79x:87y:28xx:32yy
+"Ni"→sym
+"Nickel"→nom
+"28"→z
+"58"→m
+"58.7"→mm
+79→x:87→y:28→xx:32→yy
 EndIf
 If pn=5 Then 
-"Ns"sym
-"Nielsbohrium"nom
-"107"z
-"?"m
-"?"mm
-55x:63y:43xx:47yy
+"Ns"→sym
+"Nielsbohrium"→nom
+"107"→z
+"?"→m
+"?"→mm
+55→x:63→y:43→xx:47→yy
 EndIf
 If pn=6 Then 
-"Nb"sym
-"Niobium"nom
-"41"z
-"93"m
-"92.9"mm
-39x:47y:33xx:37yy
+"Nb"→sym
+"Niobium"→nom
+"41"→z
+"93"→m
+"92.9"→mm
+39→x:47→y:33→xx:37→yy
 EndIf
 If pn=7 Then 
-"No"sym
-"Nobelium"nom
-"102"z
-"259"m
-"259"mm
-135x:143y:63xx:67yy
+"No"→sym
+"Nobelium"→nom
+"102"→z
+"259"→m
+"259"→mm
+135→x:143→y:63→xx:67→yy
 EndIf
 EndIf
 
@@ -641,28 +641,28 @@ Title "Recherche dans O"
 DropDown "Nom de l'EC",{"Or","Osmium","Oxygene"},po
 EndDlog
 If po=1 Then 
-"Au"sym
-"Or"nom
-"79"z
-"197"m
-"197.0"mm
-87x:95y:38xx:42yy
+"Au"→sym
+"Or"→nom
+"79"→z
+"197"→m
+"197.0"→mm
+87→x:95→y:38→xx:42→yy
 EndIf
 If po=2 Then 
-"Os"sym
-"Osmium"nom
-"76"z
-"192"m
-"190.2"mm
-63x:71y:38xx:42yy
+"Os"→sym
+"Osmium"→nom
+"76"→z
+"192"→m
+"190.2"→mm
+63→x:71→y:38→xx:42→yy
 EndIf
 If po=3 Then 
-"O"sym
-"Oxygene"nom
-"8"z
-"16"m
-"16.0"mm
-127x:135y:18xx:22yy
+"O"→sym
+"Oxygene"→nom
+"8"→z
+"16"→m
+"16.0"→mm
+127→x:135→y:18→xx:22→yy
 EndIf
 EndIf
 
@@ -672,84 +672,84 @@ Title "Recherche dans P"
 DropDown "Nom de l'EC",{"Palladium","Phosphore","Platine","Plomb","Plutonium","Polonium","Potassium","Praseodyme","Promethium","Protactinium"},pp
 EndDlog
 If pp=1 Then 
-"Pd"sym
-"Palladium"nom
-"46"z
-"106"m
-"106.4"mm
-79x:87y:33xx:37yy
+"Pd"→sym
+"Palladium"→nom
+"46"→z
+"106"→m
+"106.4"→mm
+79→x:87→y:33→xx:37→yy
 EndIf
 If pp=2 Then 
-"P"sym
-"Phosphore"nom
-"15"z
-"31"m
-"31.0"mm
-119x:127y:23xx:27yy
+"P"→sym
+"Phosphore"→nom
+"15"→z
+"31"→m
+"31.0"→mm
+119→x:127→y:23→xx:27→yy
 EndIf
 If pp=3 Then 
-"Pt"sym
-"Platine"nom
-"78"z
-"195"m
-"195.1"mm
-79x:87y:38xx:42yy
+"Pt"→sym
+"Platine"→nom
+"78"→z
+"195"→m
+"195.1"→mm
+79→x:87→y:38→xx:42→yy
 EndIf
 If pp=4 Then 
-"Pb"sym
-"Plomb"nom
-"82"z
-"208"m
-"207.2"mm
-111x:119y:38xx:42yy
+"Pb"→sym
+"Plomb"→nom
+"82"→z
+"208"→m
+"207.2"→mm
+111→x:119→y:38→xx:42→yy
 EndIf
 If pp=5 Then 
-"Pu"sym
-"Plutonium"nom
-"82"z
-"208"m
-"207.2"mm
-71x:79y:63xx:67yy
+"Pu"→sym
+"Plutonium"→nom
+"82"→z
+"208"→m
+"207.2"→mm
+71→x:79→y:63→xx:67→yy
 EndIf
 If pp=6 Then 
-"Po"sym
-"Polonium"nom
-"84"z
-"210"m
-"209"mm
-127x:135y:38xx:42yy
+"Po"→sym
+"Polonium"→nom
+"84"→z
+"210"→m
+"209"→mm
+127→x:135→y:38→xx:42→yy
 EndIf
 If pp=7 Then 
-"K"sym
-"Potassium"nom
-"19"z
-"39"m
-"39.1"mm
-7x:15y:28xx:32yy
+"K"→sym
+"Potassium"→nom
+"19"→z
+"39"→m
+"39.1"→mm
+7→x:15→y:28→xx:32→yy
 EndIf
 If pp=8 Then 
-"Pr"sym
-"Praseodyme"nom
-"61"z
-"146"m
-"145"mm
-47x:55y:58xx:62yy
+"Pr"→sym
+"Praseodyme"→nom
+"61"→z
+"146"→m
+"145"→mm
+47→x:55→y:58→xx:62→yy
 EndIf
 If pp=9 Then 
-"Pm"sym
-"Promethium"nom
-"61"z
-"146"m
-"145"mm
-63x:71y:58xx:62yy
+"Pm"→sym
+"Promethium"→nom
+"61"→z
+"146"→m
+"145"→mm
+63→x:71→y:58→xx:62→yy
 EndIf
 If pp=10 Then 
-"Pa"sym
-"Protactinium"nom
-"91"z
-"231"m
-"231.0"mm
-47x:55y:63xx:67yy
+"Pa"→sym
+"Protactinium"→nom
+"91"→z
+"231"→m
+"231.0"→mm
+47→x:55→y:63→xx:67→yy
 EndIf
 EndIf
 
@@ -767,52 +767,52 @@ Title "Recherche dans R"
 DropDown "Nom de l'EC",{"Radium","Radon","Rhenium","Rhodium","Rubidium","Ruthenium"},pr
 EndDlog
 If pr=1 Then 
-"Ra"sym
-"Radium"nom
-"88"z
-"226"m
-"226.0"mm
-15x:23y:43xx:47yy
+"Ra"→sym
+"Radium"→nom
+"88"→z
+"226"→m
+"226.0"→mm
+15→x:23→y:43→xx:47→yy
 EndIf
 If pr=2 Then 
-"Rn"sym
-"Radon"nom
-"86"z
-"222"m
-"222"mm
-143x:151y:38xx:42yy
+"Rn"→sym
+"Radon"→nom
+"86"→z
+"222"→m
+"222"→mm
+143→x:151→y:38→xx:42→yy
 EndIf
 If pr=3 Then 
-"Re"sym
-"Rhenium"nom
-"75"z
-"187"m
-"186.2"mm
-55x:63y:38xx:42yy
+"Re"→sym
+"Rhenium"→nom
+"75"→z
+"187"→m
+"186.2"→mm
+55→x:63→y:38→xx:42→yy
 EndIf
 If pr=4 Then 
-"Rh"sym
-"Rhodium"nom
-"45"z
-"103"m
-"102.9"mm
-71x:79y:33xx:37yy
+"Rh"→sym
+"Rhodium"→nom
+"45"→z
+"103"→m
+"102.9"→mm
+71→x:79→y:33→xx:37→yy
 EndIf
 If pr=5 Then 
-"Rb"sym
-"Rubidium"nom
-"37"z
-"85"m
-"85.5"mm
-7x:15y:33xx:37yy
+"Rb"→sym
+"Rubidium"→nom
+"37"→z
+"85"→m
+"85.5"→mm
+7→x:15→y:33→xx:37→yy
 EndIf
 If pr=6 Then 
-"Ru"sym
-"Ruthenium"nom
-"44"z
-"102"m
-"101.1"mm
-63x:71y:33xx:37yy
+"Ru"→sym
+"Ruthenium"→nom
+"44"→z
+"102"→m
+"101.1"→mm
+63→x:71→y:33→xx:37→yy
 EndIf
 EndIf
 
@@ -822,68 +822,68 @@ Title "Recherche dans S"
 DropDown "Nom de l'EC",{"Samarium","Scandium","Seaborgium","Selenium","Silicium","Sodium","Soufre","Strontium"},ps
 EndDlog
 If ps=1 Then 
-"Sm"sym
-"Samarium"nom
-"62"z
-"152"m
-"150.4"mm
-71x:79y:58xx:62yy
+"Sm"→sym
+"Samarium"→nom
+"62"→z
+"152"→m
+"150.4"→mm
+71→x:79→y:58→xx:62→yy
 EndIf
 If ps=2 Then 
-"Sc"sym
-"Scandium"nom
-"21"z
-"45"m
-"45.0"mm
-23x:31y:28xx:32yy
+"Sc"→sym
+"Scandium"→nom
+"21"→z
+"45"→m
+"45.0"→mm
+23→x:31→y:28→xx:32→yy
 EndIf
 If ps=3 Then 
-"Sg"sym
-"Seaborgium"nom
-"106"z
-"?"m
-"?"mm
-47x:55y:43xx:47yy
+"Sg"→sym
+"Seaborgium"→nom
+"106"→z
+"?"→m
+"?"→mm
+47→x:55→y:43→xx:47→yy
 EndIf
 If ps=4 Then 
-"Se"sym
-"Selenium"nom
-"34"z
-"80"m
-"79.0"mm
-127x:135y:28xx:32yy
+"Se"→sym
+"Selenium"→nom
+"34"→z
+"80"→m
+"79.0"→mm
+127→x:135→y:28→xx:32→yy
 EndIf
 If ps=5 Then 
-"Si"sym
-"Silicium"nom
-"14"z
-"28"m
-"28.1"mm
-111x:119y:23xx:27yy
+"Si"→sym
+"Silicium"→nom
+"14"→z
+"28"→m
+"28.1"→mm
+111→x:119→y:23→xx:27→yy
 EndIf
 If ps=6 Then 
-"Na"sym
-"Sodium"nom
-"11"z
-"23"m
-"23.0"mm
-7x:15y:23xx:27yy
+"Na"→sym
+"Sodium"→nom
+"11"→z
+"23"→m
+"23.0"→mm
+7→x:15→y:23→xx:27→yy
 EndIf
 If ps=7 Then 
-"S"sym
-"Soufre"nom
-"16"z
-"32"m
-"32.1"mm
-127x:135y:23xx:27yy
+"S"→sym
+"Soufre"→nom
+"16"→z
+"32"→m
+"32.1"→mm
+127→x:135→y:23→xx:27→yy
 EndIf
 If ps=8 Then 
-"Sr"sym
-"Strontium"nom
-"38"z
-"88"m
-"87.6"mm
-15x:23y:33xx:37yy
+"Sr"→sym
+"Strontium"→nom
+"38"→z
+"88"→m
+"87.6"→mm
+15→x:23→y:33→xx:37→yy
 EndIf
 EndIf
 
@@ -893,76 +893,76 @@ Title "Recherche dans T"
 DropDown "Nom de l'EC",{"Tantale","Technetium","Tellure","Terbium","Thallium","Thorium","Thulium","Titane","Tungstene"},pt
 EndDlog
 If pt=1 Then 
-"Ta"sym
-"Tantale"nom
-"73"z
-"181"m
-"180.9"mm
-39x:47y:38xx:42yy
+"Ta"→sym
+"Tantale"→nom
+"73"→z
+"181"→m
+"180.9"→mm
+39→x:47→y:38→xx:42→yy
 EndIf
 If pt=2 Then 
-"Tc"sym
-"Technetium"nom
-"43"z
-"98"m
-"98.9"mm
-55x:63y:33xx:37yy
+"Tc"→sym
+"Technetium"→nom
+"43"→z
+"98"→m
+"98.9"→mm
+55→x:63→y:33→xx:37→yy
 EndIf
 If pt=3 Then 
-"Te"sym
-"Tellure"nom
-"52"z
-"130"m
-"127.6"mm
-127x:135y:33xx:37yy
+"Te"→sym
+"Tellure"→nom
+"52"→z
+"130"→m
+"127.6"→mm
+127→x:135→y:33→xx:37→yy
 EndIf
 If pt=4 Then 
-"Tb"sym
-"Terbium"nom
-"65"z
-"159"m
-"158.9"mm
-95x:103y:58xx:62yy
+"Tb"→sym
+"Terbium"→nom
+"65"→z
+"159"→m
+"158.9"→mm
+95→x:103→y:58→xx:62→yy
 EndIf
 If pt=5 Then 
-"Tl"sym
-"Thallium"nom
-"81"z
-"205"m
-"204.4"mm
-103x:111y:38xx:42yy
+"Tl"→sym
+"Thallium"→nom
+"81"→z
+"205"→m
+"204.4"→mm
+103→x:111→y:38→xx:42→yy
 EndIf
 If pt=6 Then 
-"Th"sym
-"Thorium"nom
-"90"z
-"232"m
-"232.0"mm
-39x:47y:63xx:67yy
+"Th"→sym
+"Thorium"→nom
+"90"→z
+"232"→m
+"232.0"→mm
+39→x:47→y:63→xx:67→yy
 EndIf
 If pt=7 Then 
-"Tm"sym
-"Thulium"nom
-"69"z
-"169"m
-"168.9"mm
-127x:135y:58xx:62yy
+"Tm"→sym
+"Thulium"→nom
+"69"→z
+"169"→m
+"168.9"→mm
+127→x:135→y:58→xx:62→yy
 EndIf
 If pt=8 Then 
-"Ti"sym
-"Titane"nom
-"22"z
-"48"m
-"47.9"mm
-31x:39y:28xx:32yy
+"Ti"→sym
+"Titane"→nom
+"22"→z
+"48"→m
+"47.9"→mm
+31→x:39→y:28→xx:32→yy
 EndIf
 If pt=9 Then 
-"W"sym
-"Tungstene"nom
-"74"z
-"184"m
-"183.9"mm
-47x:55y:38xx:42yy
+"W"→sym
+"Tungstene"→nom
+"74"→z
+"184"→m
+"183.9"→mm
+47→x:55→y:38→xx:42→yy
 EndIf
 EndIf
 
@@ -972,30 +972,30 @@ Title "Recherche dans U"
 DropDown "Nom de l'EC",{"Uranium","Unnilquadium","Unnilpentium","Unnilhexium","Unnilseptium","Unniloctium","Unnilennium"},pu
 EndDlog
 If pu=1 Then 
-"U"sym
-"Uranium"nom
-"92"z
-"238"m
-"238.0"mm
-55x:63y:63xx:67yy
+"U"→sym
+"Uranium"→nom
+"92"→z
+"238"→m
+"238.0"→mm
+55→x:63→y:63→xx:67→yy
 EndIf
 If pu=2 Then 
-"Unq"sym
+"Unq"→sym
 EndIf
 If pu=3 Then 
-"Unp"sym
+"Unp"→sym
 EndIf
 If pu=4 Then 
-"Unh"sym
+"Unh"→sym
 EndIf
 If pu=5 Then 
-"Uns"sym
+"Uns"→sym
 EndIf
 If pu=6 Then 
-"Uno"sym
+"Uno"→sym
 EndIf
 If pu=7 Then 
-"Une"sym
+"Une"→sym
 EndIf
 EndIf
 
@@ -1013,52 +1013,52 @@ Title "Recherche dans V,X,Y,Z"
 DropDown "Nom de l'EC",{"Vanadium","Xenon","Ytterbium","Yttrium","Zinc","Zirconium"},pvxyz
 EndDlog
 If pvxyz=1 Then 
-"V"sym
-"Vanadium"nom
-"23"z
-"51"m
-"50.9"mm
-39x:47y:28xx:32yy
+"V"→sym
+"Vanadium"→nom
+"23"→z
+"51"→m
+"50.9"→mm
+39→x:47→y:28→xx:32→yy
 EndIf
 If pvxyz=2 Then 
-"Xe"sym
-"Xenon"nom
-"54"z
-"129"m
-"131.3"mm
-143x:151y:33xx:37yy
+"Xe"→sym
+"Xenon"→nom
+"54"→z
+"129"→m
+"131.3"→mm
+143→x:151→y:33→xx:37→yy
 EndIf
 If pvxyz=3 Then 
-"Yb"sym
-"Ytterbium"nom
-"70"nom
-"174"m
-"175.0"mm
-135x:143y:58xx:62yy
+"Yb"→sym
+"Ytterbium"→nom
+"70"→nom
+"174"→m
+"175.0"→mm
+135→x:143→y:58→xx:62→yy
 EndIf
 If pvxyz=4 Then 
-"Y"sym
-"Yttrium"nom
-"39"z
-"89"m
-"88.9"mm
-23x:31y:33xx:37yy
+"Y"→sym
+"Yttrium"→nom
+"39"→z
+"89"→m
+"88.9"→mm
+23→x:31→y:33→xx:37→yy
 EndIf
 If pvxyz=5 Then 
-"Zn"sym
-"Zinc"nom
-"30"z
-"64"m
-"65.5"mm
-95x:103y:28xx:32yy
+"Zn"→sym
+"Zinc"→nom
+"30"→z
+"64"→m
+"65.5"→mm
+95→x:103→y:28→xx:32→yy
 EndIf
 If pvxyz=6 Then 
-"Zr"sym
-"Zirconium"nom
-"40"z
-"90"m
-"91.2"mm
-31x:39y:33xx:37yy
+"Zr"→sym
+"Zirconium"→nom
+"40"→z
+"90"→m
+"91.2"→mm
+31→x:39→y:33→xx:37→yy
 EndIf
 EndIf
 

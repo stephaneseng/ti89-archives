@@ -4,7 +4,7 @@ Collection of some TI-89 programs in C and TI-BASIC that I made a long time ago.
 
 As of August 2019, these are still buildable using [TIGCC 0.96 Beta 8](http://tigcc.ticalc.org) and runnable on [TI-89 Titanium OS 3.10](https://education.ti.com/en/products/calculators/graphing-calculators/ti-89-titanium).
 
-Note: TI-BASIC binary file contents (*.89p) have been converted into text for easier browsing using [TI-Edit 0.3.1](http://tiedit.free.fr/index.php), even though some characters are not properly converted (for instance, the "store symbol" is not converted into an appropriate UTF-8 representation such as "→").
+Note: TI-BASIC binary file contents (*.89p) have been converted into text for easier browsing using [TI-Edit 0.3.1](http://tiedit.free.fr/index.php), even though some characters may not be properly converted.
 
 ## Games
 

@@ -1,14 +1,14 @@
 (sel,nb)
 Prgm
-0err
-0spp
+0→err
+0→spp
 
 ©CHOIX DU POINT
 If sel=1 Then 
 Try
 ptsa[1]+1
 Else
-1err
+1→err
 EndTry
 If err=1 Then 
 Dialog
@@ -19,35 +19,35 @@ Text ""
 EndDlog
 Goto exite
 EndIf
-1t
-dim(ptsa)d
+1→t
+dim(ptsa)→d
 Lbl cer
-If tœ0:dt
-If t>d:1t
+If tœ0:d→t
+If t>d:1→t
 Circle ptsa[t],ptso[t],.3
-0c
+0→c
 While c=0
-getKey()c
+getKey()→c
 EndWhile
-If c340 and c337 and c264 and c13 Then :Goto cer:EndIf
+If c≠340 and c≠337 and c≠264 and c≠13 Then :Goto cer:EndIf
 If c=340 Then 
 Circle ptsa[t],ptso[t],.3,0
-t+1t
+t+1→t
 Goto cer
 EndIf
 If c=337 Then 
 Circle ptsa[t],ptso[t],.3,0
-t-1t
+t-1→t
 Goto cer
 EndIf
 If c=264 Then 
 Circle ptsa[t],ptso[t],.3,0
-1err
+1→err
 DelVar t
 Goto exite
 EndIf
 If c=13 Then 
-tptsel[nb]
+t→ptsel[nb]
 Circle ptsa[t],ptso[t],.2:Circle ptsa[t],ptso[t],.3,0
 EndIf
 Goto exite
@@ -69,20 +69,20 @@ EndFor
 ©droite
 DelVar gdte
 For tt,1,dim(dte),2
-If tt=1 Then :1zz:Else:zz+1zz:EndIf
-coef*x-coef*ptsa[dte[tt]]+ptso[dte[tt]]|coef=(ptso[dte[tt+1]]-ptso[dte[tt]])/(ptsa[dte[tt+1]]-ptsa[dte[tt]])gdte[zz]
+If tt=1 Then :1→zz:Else:zz+1→zz:EndIf
+coef*x-coef*ptsa[dte[tt]]+ptso[dte[tt]]|coef=(ptso[dte[tt+1]]-ptso[dte[tt]])/(ptsa[dte[tt+1]]-ptsa[dte[tt]])→gdte[zz]
 If gdte[zz]=undef Then 
 Line ptsa[dte[tt]],­30,ptsa[dte[tt]],30
 Goto conti
 EndIf
-gdte[zz]|x=­40yd
-gdte[zz]|x=40yf
+gdte[zz]|x=­40→yd
+gdte[zz]|x=40→yf
 Line ­40,yd,40,yf
 Lbl conti
 EndFor
 ©cercle
 For tt,1,dim(cer),2
-Circle ptsa[cer[tt]],ptso[cer[tt]],¨((ptsa[cer[tt]]-ptsa[cer[tt+1]])^2+(ptso[cer[tt]]-ptso[cer[tt+1]])^2)
+Circle ptsa[cer[tt]],ptso[cer[tt]],√((ptsa[cer[tt]]-ptsa[cer[tt+1]])^2+(ptso[cer[tt]]-ptso[cer[tt+1]])^2)
 EndFor
 ©nom point
 For tt,1,dim(ptn),2
@@ -100,52 +100,52 @@ If sel=3 and nb=1 Then
 For tt,1,dim(lgn),2
 If lgn[tt]=ptsel[1] Then 
 If tt=1 Then 
-right(lgn,dim(lgn)-2)dlgn
-newList(0)lgn
-augment(lgn,dlgn)lgn
+right(lgn,dim(lgn)-2)→dlgn
+newList(0)→lgn
+augment(lgn,dlgn)→lgn
 Goto contsg
 EndIf
 If tt=dim(lgn)-1 Then 
-left(lgn,dim(lgn)-2)glgn
-newList(0)lgn
-augment(lgn,glgn)lgn
+left(lgn,dim(lgn)-2)→glgn
+newList(0)→lgn
+augment(lgn,glgn)→lgn
 Goto contsg
 EndIf
-left(lgn,tt-1)glgn
-right(lgn,tt-1)dlgn
-newList(0)lgn
-augment(lgn,glgn)lgn
-augment(lgn,dlgn)lgn
+left(lgn,tt-1)→glgn
+right(lgn,tt-1)→dlgn
+newList(0)→lgn
+augment(lgn,glgn)→lgn
+augment(lgn,dlgn)→lgn
 Lbl contsg
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,2,dim(lgn),2
 If lgn[tt]=ptsel[1] Then 
 If tt=2 Then 
-right(lgn,dim(lgn)-2)dlgn
-newList(0)lgn
-augment(lgn,dlgn)lgn
+right(lgn,dim(lgn)-2)→dlgn
+newList(0)→lgn
+augment(lgn,dlgn)→lgn
 Goto finsg
 EndIf
 If tt=dim(lgn) Then 
-left(lgn,dim(lgn)-2)glgn
-newList(0)lgn
-augment(lgn,glgn)lgn
+left(lgn,dim(lgn)-2)→glgn
+newList(0)→lgn
+augment(lgn,glgn)→lgn
 Goto finsg
 EndIf
-left(lgn,tt-2)glgn
-right(lgn,tt-2)dlgn
-newList(0)lgn
-augment(lgn,glgn)lgn
-augment(lgn,dlgn)lgn
+left(lgn,tt-2)→glgn
+right(lgn,tt-2)→dlgn
+newList(0)→lgn
+augment(lgn,glgn)→lgn
+augment(lgn,dlgn)→lgn
 Lbl finsg
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,1,dim(lgn)
 If lgn[tt]>ptsel[1] Then 
-lgn[tt]-1lgn[tt]
+lgn[tt]-1→lgn[tt]
 EndIf
 EndFor
 EndIf
@@ -154,52 +154,52 @@ If sel=3 and nb=2 Then
 For tt,1,dim(cer),2
 If cer[tt]=ptsel[1] Then 
 If tt=1 Then 
-right(cer,dim(cer)-2)dcer
-newList(0)cer
-augment(cer,dcer)cer
+right(cer,dim(cer)-2)→dcer
+newList(0)→cer
+augment(cer,dcer)→cer
 Goto contcer
 EndIf
 If tt=dim(cer)-1 Then 
-left(cer,dim(cer)-2)gcer
-newList(0)cer
-augment(cer,gcer)cer
+left(cer,dim(cer)-2)→gcer
+newList(0)→cer
+augment(cer,gcer)→cer
 Goto contcer
 EndIf
-left(cer,tt-1)gcer
-right(cer,tt-1)dcer
-newList(0)cer
-augment(cer,gcer)cer
-augment(cer,dcer)cer
+left(cer,tt-1)→gcer
+right(cer,tt-1)→dcer
+newList(0)→cer
+augment(cer,gcer)→cer
+augment(cer,dcer)→cer
 Lbl contcer
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,2,dim(cer),2
 If cer[tt]=ptsel[1] Then 
 If tt=2 Then 
-right(cer,dim(cer)-2)dcer
-newList(0)cer
-augment(cer,dcer)cer
+right(cer,dim(cer)-2)→dcer
+newList(0)→cer
+augment(cer,dcer)→cer
 Goto fincer
 EndIf
 If tt=dim(cer) Then 
-left(cer,dim(cer)-2)gcer
-newList(0)cer
-augment(cer,gcer)cer
+left(cer,dim(cer)-2)→gcer
+newList(0)→cer
+augment(cer,gcer)→cer
 Goto fincer
 EndIf
-left(cer,tt-2)gcer
-right(cer,tt-2)dcer
-newList(0)cer
-augment(cer,gcer)cer
-augment(cer,dcer)cer
+left(cer,tt-2)→gcer
+right(cer,tt-2)→dcer
+newList(0)→cer
+augment(cer,gcer)→cer
+augment(cer,dcer)→cer
 Lbl fincer
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,1,dim(cer)
 If cer[tt]>ptsel[1] Then 
-cer[tt]-1cer[tt]
+cer[tt]-1→cer[tt]
 EndIf
 EndFor
 EndIf
@@ -208,29 +208,29 @@ If sel=3 and nb=3 Then
 For tt,1,dim(ptn),2
 If ptn[tt]=ptsel[1] Then 
 If tt=1 Then 
-right(ptn,dim(ptn)-2)dptn
-newList(0)ptn
-augment(ptn,dptn)ptn
+right(ptn,dim(ptn)-2)→dptn
+newList(0)→ptn
+augment(ptn,dptn)→ptn
 Goto finptn
 EndIf
 If tt=dim(ptn)-1 Then 
-left(ptn,dim(ptn)-2)gptn
-newList(0)ptn
-augment(ptn,gptn)ptn
+left(ptn,dim(ptn)-2)→gptn
+newList(0)→ptn
+augment(ptn,gptn)→ptn
 Goto finptn
 EndIf
-left(ptn,tt-1)gptn
-right(ptn,tt-1)dptn
-newList(0)ptn
-augment(ptn,gptn)ptn
-augment(ptn,dptn)ptn
+left(ptn,tt-1)→gptn
+right(ptn,tt-1)→dptn
+newList(0)→ptn
+augment(ptn,gptn)→ptn
+augment(ptn,dptn)→ptn
 Lbl finptn
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,1,dim(ptn),2
 If ptn[tt]>ptsel[1] Then 
-ptn[tt]-1ptn[tt]
+ptn[tt]-1→ptn[tt]
 EndIf
 EndFor
 EndIf
@@ -239,52 +239,52 @@ If sel=3 and nb=4 Then
 For tt,1,dim(dte),2
 If dte[tt]=ptsel[1] Then 
 If tt=1 Then 
-right(dte,dim(dte)-2)ddte
-newList(0)dte
-augment(dte,ddte)dte
+right(dte,dim(dte)-2)→ddte
+newList(0)→dte
+augment(dte,ddte)→dte
 Goto contdt
 EndIf
 If tt=dim(dte)-1 Then 
-left(dte,dim(dte)-2)gdte
-newList(0)dte
-augment(dte,gdte)dte
+left(dte,dim(dte)-2)→gdte
+newList(0)→dte
+augment(dte,gdte)→dte
 Goto contdt
 EndIf
-left(dte,tt-1)gdte
-right(dte,tt-1)ddte
-newList(0)dte
-augment(dte,gdte)dte
-augment(dte,ddte)dte
+left(dte,tt-1)→gdte
+right(dte,tt-1)→ddte
+newList(0)→dte
+augment(dte,gdte)→dte
+augment(dte,ddte)→dte
 Lbl contdt
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,2,dim(dte),2
 If dte[tt]=ptsel[1] Then 
 If tt=2 Then 
-right(dte,dim(dte)-2)ddte
-newList(0)dte
-augment(dte,ddte)dte
+right(dte,dim(dte)-2)→ddte
+newList(0)→dte
+augment(dte,ddte)→dte
 Goto findt
 EndIf
 If tt=dim(dte) Then 
-left(dte,dim(dte)-2)gdte
-newList(0)dte
-augment(dte,gdte)dte
+left(dte,dim(dte)-2)→gdte
+newList(0)→dte
+augment(dte,gdte)→dte
 Goto findt
 EndIf
-left(dte,tt-2)gdte
-right(dte,tt-2)ddte
-newList(0)dte
-augment(dte,gdte)dte
-augment(dte,ddte)dte
+left(dte,tt-2)→gdte
+right(dte,tt-2)→ddte
+newList(0)→dte
+augment(dte,gdte)→dte
+augment(dte,ddte)→dte
 Lbl findt
-tt-2tt
+tt-2→tt
 EndIf
 EndFor
 For tt,1,dim(dte)
 If dte[tt]>ptsel[1] Then 
-dte[tt]-1dte[tt]
+dte[tt]-1→dte[tt]
 EndIf
 EndFor
 EndIf
@@ -295,36 +295,36 @@ StoPic tempz
 Lbl mm
 RplcPic tempz
 Line a1[1],a1[2],a2[1],a2[2]:Line a2[1],a2[2],a3[1],a3[2]:Line a3[1],a3[2],a4[1],a4[2]:Line a4[1],a4[2],a1[1],a1[2]
-0c:While c=0:getKey()c:EndWhile
-If c338 and c340 and c344 and c337 and c13 Then 
+0→c:While c=0:getKey()→c:EndWhile
+If c≠338 and c≠340 and c≠344 and c≠337 and c≠13 Then 
 Line a1[1],a1[2],a2[1],a2[2],0:Line a2[1],a2[2],a3[1],a3[2],0:Line a3[1],a3[2],a4[1],a4[2],0:Line a4[1],a4[2],a1[1],a1[2],0
-{0,0}a1:{15.8,0}a2:{15.8,7.6}a3:{0,7.6}a4
-a1[1]xmin:a1[2]ymin:a3[1]xmax:a3[2]ymax:1xscl:1yscl:DispG
+{0,0}→a1:{15.8,0}→a2:{15.8,7.6}→a3:{0,7.6}→a4
+a1[1]→xmin:a1[2]→ymin:a3[1]→xmax:a3[2]→ymax:1→xscl:1→yscl:DispG
 Stop
 EndIf
 If c=338 Then 
 Line a1[1],a1[2],a2[1],a2[2],0:Line a2[1],a2[2],a3[1],a3[2],0:Line a3[1],a3[2],a4[1],a4[2],0:Line a4[1],a4[2],a1[1],a1[2],0
-a1[2]+1a1[2]:a2[2]+1a2[2]:a3[2]+1a3[2]:a4[2]+1a4[2]
+a1[2]+1→a1[2]:a2[2]+1→a2[2]:a3[2]+1→a3[2]:a4[2]+1→a4[2]
 Goto mm
 EndIf
 If c=344 Then 
 Line a1[1],a1[2],a2[1],a2[2],0:Line a2[1],a2[2],a3[1],a3[2],0:Line a3[1],a3[2],a4[1],a4[2],0:Line a4[1],a4[2],a1[1],a1[2],0
-a1[2]-1a1[2]:a2[2]-1a2[2]:a3[2]-1a3[2]:a4[2]-1a4[2]
+a1[2]-1→a1[2]:a2[2]-1→a2[2]:a3[2]-1→a3[2]:a4[2]-1→a4[2]
 Goto mm
 EndIf
 If c=337 Then 
 Line a1[1],a1[2],a2[1],a2[2],0:Line a2[1],a2[2],a3[1],a3[2],0:Line a3[1],a3[2],a4[1],a4[2],0:Line a4[1],a4[2],a1[1],a1[2],0
-a1[1]-1a1[1]:a2[1]-1a2[1]:a3[1]-1a3[1]:a4[1]-1a4[1]
+a1[1]-1→a1[1]:a2[1]-1→a2[1]:a3[1]-1→a3[1]:a4[1]-1→a4[1]
 Goto mm
 EndIf
 If c=340 Then 
 Line a1[1],a1[2],a2[1],a2[2],0:Line a2[1],a2[2],a3[1],a3[2],0:Line a3[1],a3[2],a4[1],a4[2],0:Line a4[1],a4[2],a1[1],a1[2],0
-a1[1]+1a1[1]:a2[1]+1a2[1]:a3[1]+1a3[1]:a4[1]+1a4[1]
+a1[1]+1→a1[1]:a2[1]+1→a2[1]:a3[1]+1→a3[1]:a4[1]+1→a4[1]
 Goto mm
 EndIf
 If c=13 Then 
 Line a1[1],a1[2],a2[1],a2[2],0:Line a2[1],a2[2],a3[1],a3[2],0:Line a3[1],a3[2],a4[1],a4[2],0:Line a4[1],a4[2],a1[1],a1[2],0
-a1[1]xmin:a1[2]ymin:a3[1]xmax:a3[2]ymax:1xscl:1yscl:DispG
+a1[1]→xmin:a1[2]→ymin:a3[1]→xmax:a3[2]→ymax:1→xscl:1→yscl:DispG
 EndIf
 EndIf
 
@@ -333,7 +333,7 @@ If sel=5 Then
 Try
 txt[2]+1
 Else
-1err
+1→err
 EndTry
 If err=1 Then 
 Dialog
@@ -348,41 +348,41 @@ For tt,1,dim(txt),3
 Line txt[tt+1]-.1,txt[tt+2],txt[tt+1]+.1,txt[tt+2]
 Line txt[tt+1],txt[tt+2]-.1,txt[tt+1],txt[tt+2]+.1
 EndFor
-newList(0)txta
-newList(0)txto
+newList(0)→txta
+newList(0)→txto
 For tt,1,dim(txt),3
-augment(txta,{txt[tt+1]})txta
-augment(txto,{txt[tt+2]})txto
+augment(txta,{txt[tt+1]})→txta
+augment(txto,{txt[tt+2]})→txto
 EndFor
-1t
-dim(txta)d
+1→t
+dim(txta)→d
 Lbl cerr
-If tœ0:dt
-If t>d:1t
+If tœ0:d→t
+If t>d:1→t
 Circle txta[t],txto[t],.3
-0c
+0→c
 While c=0
-getKey()c
+getKey()→c
 EndWhile
-If c340 and c337 and c264 and c13 Then :Goto cerr:EndIf
+If c≠340 and c≠337 and c≠264 and c≠13 Then :Goto cerr:EndIf
 If c=340 Then 
 Circle txta[t],txto[t],.3,0
-t+1t
+t+1→t
 Goto cerr
 EndIf
 If c=337 Then 
 Circle txta[t],txto[t],.3,0
-t-1t
+t-1→t
 Goto cerr
 EndIf
 If c=264 Then 
 Circle txta[t],txto[t],.3,0
-1err
+1→err
 DelVar t
 Goto exite
 EndIf
 If c=13 Then 
-ttxtsel[nb]
+t→txtsel[nb]
 Circle txta[t],txto[t],.2:Circle txta[t],txto[t],.3,0
 EndIf
 EndIf
@@ -390,9 +390,9 @@ EndIf
 ©ANNULER
 If sel=6 Then 
 If ss=0 Then 
-an1ptsa:an2ptso:an3lgn:an4dte:an5cer:an6ptn:an7txt
+an1→ptsa:an2→ptso:an3→lgn:an4→dte:an5→cer:an6→ptn:an7→txt
 Else
-ann1ptsa:ann2ptso:ann3lgn:ann4dte:ann5cer:ann6ptn:ann7txt
+ann1→ptsa:ann2→ptso:ann3→lgn:ann4→dte:ann5→cer:ann6→ptn:ann7→txt
 EndIf
 EndIf
 
